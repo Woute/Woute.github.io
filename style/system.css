@@ -1,0 +1,195 @@
+* {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	font-family: arial, sans-serif;
+}
+
+body, html {
+	height: 100%;
+	width: 100%;
+	background: url("../images/background.png");
+	-webkit-background-size: cover;
+}
+
+@keyframes GhostSitePopUp {
+	0% {top: -100px;}
+	20% {top: 0px;}
+	80% {top: 0px;}
+	100% {top: -100px;}
+}
+
+#GhostSite {
+	position: absolute;
+	top: -100px;
+	right: 0;
+	height: 100px;
+	width: 20%;
+	text-align: center;
+	line-height: 90px;
+	font-size: 40px;
+	color: rgba(255, 240, 100, 1);
+	background: rgba(175, 50, 50, 0.8);
+}
+
+#systemName {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 15%;
+	width: 30%;
+	text-align: center;
+	font-size: 600%;
+	color: #112255;
+}
+
+#topSystem {
+	position: absolute;
+	top: 0;
+	left: 40%;
+	height: 15%;
+	width: 20%;
+	background: rgba(0, 0, 0, 0);
+}
+
+#leftSystem {
+	position: absolute;
+	top: 30%;
+	left: 0;
+	height: 40%;
+	width: 10%;
+	background: rgba(0, 0, 0, 0);
+}
+
+#rightSystem {
+	position: absolute;
+	top: 30%;
+	right: 0;
+	height: 40%;
+	width: 10%;
+	background: rgba(0, 0, 0, 0);
+}
+
+#bottomSystem {
+	position: absolute;
+	bottom: 0;
+	left: 40%;
+	height: 15%;
+	width: 20%;
+	background: rgba(0, 0, 0, 0);
+}
+
+.navButton {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	font-style: bold;
+	font-size: 26px;
+	background: rgba(0, 0, 0, 0);
+}
+
+#main {
+	position: absolute;
+	top: 15%;
+	left: 10%;
+	height: 70%;
+	width: 80%;
+	opacity: 0.7;
+}
+
+#scanReader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 30%;
+}
+
+	#reader {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		resize: none;
+		opacity: 0.8;
+		background: #CCCCCC;
+	}
+
+#scanResults {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 70%;
+	background: #444444;
+}
+	#results {
+		position: absolute;
+		top: 5%;
+		left: 0;
+		height: 95%;
+		width: 100%;
+		overflow: auto;
+	}
+	
+	thead {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 5%;
+		width: 100%;
+	}
+	
+	#results tr {
+		position: relative;
+		display: inline-block;
+		left: 0;
+		width: 100%;
+		height: 7%;
+		line-height: 150%;
+		vertical-align: middle;
+	}
+	
+	.sigId {
+		display: inline-block;
+		position: absolute;
+		left: 0;
+		width: 20%;
+		height: 100%;
+	}
+	
+	.type {
+		position: absolute;
+		left: 20%;
+		width: 20%;
+		height: 100%;
+	}
+	
+	.name {
+		position: absolute;
+		left: 40%;
+		width: 55%;
+		height: 100%;
+	}
+	
+	.combat {
+		position: absolute;
+		left: 95%;
+		width: 5%;
+		height: 100%;
+	}
+	
+	.combat button {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		left:0;
+		width: 100%;
+	}
+	
+	td {
+		text-align: center;
+	}	
