@@ -1,12 +1,9 @@
 var cache = {};
 var signatures = {};
 
-function goTo(page) {
-	if (page == "") {
-		return true;
-	}
-	window.location.href = page + '.html';
-}
+window.onload = setInterval(function() {
+	
+}, 5000);
 
 function ctrlZ(system) {
 	signatures = JSON.parse(localStorage.getItem("backup_" + system));
@@ -74,7 +71,7 @@ function displaySignatures(system) {
 			tmp = document.createElement("td");
 			tmp.className = "combat";
 			var combat = document.createElement("button");
-			combat.style.background = "url(\"images/combat.png\") top no-repeat";
+			combat.style.background = "url(\"../images/combat.png\") top no-repeat";
 			combat.setAttribute("sigId", sigId);
 			combat.onclick = function() {
 				makeCombat(this.getAttribute("sigId"), system);
