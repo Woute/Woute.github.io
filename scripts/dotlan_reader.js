@@ -24,5 +24,8 @@ function compute() {
         }
         input = input.replace(new RegExp('xlink:href="#def' + id + '" />'), replacement);
     }
+    input = input.replace(/<g id="controls"[.\s\S]*\]\]><\/script>/m, '');
+    input = input.replace(/onload="init\(evt\)"[^>]*>/, '>');
+    input += '\n</html>';
     document.getElementById('result').value = input;
 }
