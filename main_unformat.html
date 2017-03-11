@@ -1,41 +1,6 @@
-<script>
-	document.onkeydown = function(e) {
-		/* Top */
-		if (e.keyCode == 38) {
-			goTo(topSystem);
-		}
-		/* Left */
-		if (e.keyCode == 37) {
-			goTo(leftSystem);
-		}
-		/* Right */
-		if (e.keyCode == 39) {
-			goTo(rightSystem);
-		}
-		/* Bottom */
-		if (e.keyCode == 40) {
-			goTo(bottomSystem);
-		}
-		if (e.ctrlKey && e.keyCode == 90) {
-			ctrlZ(document.title);
-		}
-	}			
-</script>
 <button id="systemName" class="navButton" onclick="goTo(\'index\')";>
 	<script>document.getElementById("systemName").innerHTML = document.title;</script>
 </button>
-<div id="topSystem">
-	<button id="topButton" class="navButton" onclick="goTo(topSystem)";><script>document.getElementById("topButton").innerHTML = topSystem;</script></button>
-</div>
-<div id="leftSystem">
-	<button id="leftButton" class="navButton" onclick="goTo(leftSystem)";><script>document.getElementById("leftButton").innerHTML = leftSystem;</script></button>
-</div>
-<div id="rightSystem">
-	<button id="rightButton" class="navButton" onclick="goTo(rightSystem)";><script>document.getElementById("rightButton").innerHTML = rightSystem;</script></button>
-</div>
-<div id="bottomSystem">
-	<button id="bottomButton" class="navButton" onclick="goTo(bottomSystem)";><script>document.getElementById("bottomButton").innerHTML = bottomSystem;</script></button>
-</div>
 <section id="main">
 	<div id="scanReader">
 		<textarea id="reader" autofocus onfocus="this.value = \'\';" onkeypress="checkEnter(document.title);"></textarea>

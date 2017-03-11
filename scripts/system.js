@@ -5,6 +5,12 @@ window.onload = setInterval(function() {
 	
 }, 5000);
 
+document.onkeydown = function(e) {
+	if (e.ctrlKey && e.keyCode == 90) {
+		ctrlZ(document.title);
+	}
+}	
+
 function ctrlZ(system) {
 	signatures = JSON.parse(localStorage.getItem("backup_" + system));
 	if (signatures !== "undefined") {

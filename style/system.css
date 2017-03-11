@@ -12,26 +12,6 @@ body, html {
 	-webkit-background-size: cover;
 }
 
-@keyframes GhostSitePopUp {
-	0% {top: -100px;}
-	20% {top: 0px;}
-	80% {top: 0px;}
-	100% {top: -100px;}
-}
-
-#GhostSite {
-	position: absolute;
-	top: -100px;
-	right: 0;
-	height: 100px;
-	width: 20%;
-	text-align: center;
-	line-height: 90px;
-	font-size: 40px;
-	color: rgba(255, 240, 100, 1);
-	background: rgba(175, 50, 50, 0.8);
-}
-
 #systemName {
 	position: absolute;
 	top: 0;
@@ -41,42 +21,6 @@ body, html {
 	text-align: center;
 	font-size: 600%;
 	color: #112255;
-}
-
-#topSystem {
-	position: absolute;
-	top: 0;
-	left: 40%;
-	height: 15%;
-	width: 20%;
-	background: rgba(0, 0, 0, 0);
-}
-
-#leftSystem {
-	position: absolute;
-	top: 30%;
-	left: 0;
-	height: 40%;
-	width: 10%;
-	background: rgba(0, 0, 0, 0);
-}
-
-#rightSystem {
-	position: absolute;
-	top: 30%;
-	right: 0;
-	height: 40%;
-	width: 10%;
-	background: rgba(0, 0, 0, 0);
-}
-
-#bottomSystem {
-	position: absolute;
-	bottom: 0;
-	left: 40%;
-	height: 15%;
-	width: 20%;
-	background: rgba(0, 0, 0, 0);
 }
 
 .navButton {
