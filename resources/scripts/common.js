@@ -25,7 +25,7 @@ function setDestination(id) {
     return false;
 }
 
-function httpRequest(address, reqType, asyncProc) {
+function httpRequest(address, reqType, contentType, data, asyncProc) {
    var r = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
    if (asyncProc) 
       r.onreadystatechange = function () { 
@@ -34,6 +34,7 @@ function httpRequest(address, reqType, asyncProc) {
    else 
       r.timeout = 4000;  // Reduce default 2mn-like timeout to 4 s if synchronous
    r.open(reqType, address, !(!asyncProc));
-   r.send();
+   if (contentType) r.setRequestHeader('Content-Type', contentType);
+   r.send(data);
    return r;
 }
