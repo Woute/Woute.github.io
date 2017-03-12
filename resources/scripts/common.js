@@ -10,7 +10,7 @@ function authSSO() {
 	var scope = 'characterLocationRead%20characterNavigationWrite';
 	var state = (Math.random() * 10).toString();
 	url = url + '?response_type=code&redirect_uri=' + redirect_uri + '&client_id=' + clientID + '&scope=' + scope + '&state=' + state;
-	console.log(url);
+	window.location.href = url;
 }
 
 function goTo(page) {
@@ -25,3 +25,15 @@ function setDestination(id) {
     return false;
 }
 
+function httpRequest(address, reqType, asyncProc) {
+   var r = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
+   if (asyncProc) 
+      r.onreadystatechange = function () { 
+          if (this.readyState == 4) asyncProc(this); 
+      }; 
+   else 
+      r.timeout = 4000;  // Reduce default 2mn-like timeout to 4 s if synchronous
+   r.open(reqType, address, !(!asyncProc));
+   r.send();
+   return r;
+}
