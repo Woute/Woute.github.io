@@ -21,6 +21,10 @@
 		var code = getParameterByName('code');
 		var state = getParameterByName('state');
 		var address = 'https://evescanner-gatekeeper.herokuapp.com/authenticate/' + code;
+		/** 
+			ToDo : Remplacer tout ce merdier par des promesses 
+			http://stackoverflow.com/questions/30008114/how-do-i-promisify-native-xhr		
+		**/
 		var req = httpRequest(address, 'GET', null, null);
 		console.log(req);
 	</script>
