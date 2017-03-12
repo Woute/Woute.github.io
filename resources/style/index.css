@@ -2,3 +2,9 @@ html {
 	overflow: hidden;
 	background: #111111;
 }
+
+#SSOButton {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
