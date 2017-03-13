@@ -22,6 +22,7 @@
 		let code = getParameterByName('code');
 		localStorage.setItem('code', code);
 		let state = getParameterByName('state');
+		let url = state.split('_')[1];
 		if (state !== localStorage.getItem('state')) {
 			window.location.href = url;
 		}
