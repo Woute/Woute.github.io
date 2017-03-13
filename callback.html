@@ -25,7 +25,9 @@
 			ToDo : Remplacer tout ce merdier par des promesses 
 			http://stackoverflow.com/questions/30008114/how-do-i-promisify-native-xhr		
 		**/
-		var req = httpRequest(address, 'GET', null, null);
-		console.log(req);
+		httpRequest(address, 'GET')
+		.then(response => {
+			console.log(response);
+		})
 	</script>
 </html>

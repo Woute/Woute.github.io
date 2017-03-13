@@ -25,15 +25,32 @@ function setDestination(id) {
     return false;
 }
 
-function httpRequest(address, reqType, contentType, data, asyncProc) {
-   var r = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject("Microsoft.XMLHTTP");
-   if (asyncProc) { 
-      r.onreadystatechange = function () { 
-          if (this.readyState == 4) asyncProc(this); 
-      };
-   }
-   r.open(reqType, address, !(!asyncProc));
-   if (contentType) r.setRequestHeader('Content-Type', contentType);
-   r.send(data);
-   return r;
+function httpRequest(method, url, data, headers) {
+  return new Promise(function (resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    xhr.onload = function () {
+      if (this.status >= 200 && this.status < 300) {
+        resolve(xhr.response);
+      } else {
+        reject({
+          status: this.status,
+          statusText: xhr.statusText
+        });
+      }
+    };
+    if (headers) {
+      Object.keys(headers).forEach(function (key) {
+        xhr.setRequestHeader(key, headers[key]);
+      });
+    }
+    xhr.onerror = function () {
+      reject({
+        status: this.status,
+        statusText: xhr.statusText
+      });
+    };
+    xhr.send(data);
+  });
 }
+
