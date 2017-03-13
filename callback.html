@@ -20,7 +20,11 @@
 			return decodeURIComponent(results[2].replace(/\+/g, " "));
 		}
 		let code = getParameterByName('code');
+		localStorage.setItem('code', code);
 		let state = getParameterByName('state');
+		if (state !== localStorage.getItem('state')) {
+			window.location.href = '/';
+		}
 		let address = 'https://evescanner-gatekeeper.herokuapp.com/authenticate/' + code;
 		/** 
 			ToDo : Remplacer tout ce merdier par des promesses 
@@ -28,7 +32,8 @@
 		**/
 		httpRequest('GET', address)
 		.then(response => {
-			
+			let token = JSON.parse(response).token;
+			localStorage.setItem('token', token);
 		})
 	</script>
 </html>
