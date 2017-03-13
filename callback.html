@@ -21,9 +21,11 @@
 		}
 		let code = getParameterByName('code');
 		localStorage.setItem('code', code);
-		let state = getParameterByName('state');
+		let tmp = getParameterByName('state').split('_');
+		let state = tmp[0];
+		let url = tmp[1];
 		if (state !== localStorage.getItem('state')) {
-			window.location.href = '/';
+			window.location.href = url;
 		}
 		let address = 'https://evescanner-gatekeeper.herokuapp.com/authenticate/' + code;
 		/** 
@@ -34,6 +36,7 @@
 		.then(response => {
 			let token = JSON.parse(response).token;
 			localStorage.setItem('token', token);
+			window.location.href = url;
 		})
 	</script>
 </html>
