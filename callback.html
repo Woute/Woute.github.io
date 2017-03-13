@@ -21,10 +21,7 @@
 		}
 		let code = getParameterByName('code');
 		localStorage.setItem('code', code);
-		let tmp = getParameterByName('state').split('_');
-		let state = tmp[0];
-		let url = tmp[1];
-		alert(url);
+		let state = getParameterByName('state');
 		if (state !== localStorage.getItem('state')) {
 			window.location.href = url;
 		}
