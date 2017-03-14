@@ -32,11 +32,11 @@
 			let token = JSON.parse(response).token;
 			localStorage.setItem('token', token);
 			address = 'https://login.eveonline.com/oauth/verify';
-			return httpRequest('GET', address, true, null, { Origin: 'https://woute.github.io' });
+			return httpRequest('GET', address, true);
 			//window.location.href = url;
 		})
 		.then(response => {
 			console.log(response);
-		})
+		}
 	</script>
 </html>
