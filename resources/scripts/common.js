@@ -29,7 +29,7 @@ function setDestination(id) {
 
 function httpRequest(method, url, auth, data, headers) {
   return new Promise(function (resolve, reject) {
-    let xhr = new XDomainRequest();
+    let xhr = new XMLHttpRequest();
     xhr.open(method, url);
     xhr.onload = function () {
       if (this.status >= 200 && this.status < 300) {
