@@ -5,11 +5,19 @@
 		<meta content="True" name="Handheld">
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		<link rel="stylesheet" href="/resources/style/index.css" media="all"/>
-        <script src="/resources/scripts/common.js" type=text/javascript></script>
+		<script src="/resources/scripts/common.js" type=text/javascript></script>
+		<script src="/resources/scripts/index.js" type=text/javascript></script>
+		<script src="/resources/scripts/region.js" type=text/javascript></script>
 		<title>Domain</title>
 	</head>
-   <input id="SSOButton" type="image" src="/resources/images/EVE_SSO_Login_Buttons_Large_Black.png" onclick="authSSO();"/>
-    <?xml version="1.0"?>
+<input id="SSOButton" type="image" src="/resources/images/EVE_SSO_Login_Buttons_Large_Black.png" onclick="authSSO();"/>
+<div id="credentials">
+	<input id="clientID" type="text" placeholder="Your clientID" />
+	<input id="secret" type="text" placeholder="Your secret" />
+	<input id="readCredentials" type="button" onclick="readCredentials();" />
+</div>
+
+<?xml version="1.0"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
@@ -2374,15 +2382,7 @@
 <text x="10" y="20" id="debug"  style="fill: #888888;"> </text>
 
 <g id="glow">
-  <rect id="inc30033489" x="551.5" y="351.5" width="72.5" height="40.5" class="inc" />
-  <rect id="inc30003520" x="601.5" y="266.5" width="72.5" height="40.5" class="inc" />
-  <rect id="inc30003521" x="601.5" y="296.5" width="72.5" height="40.5" class="inc" />
-  <rect id="inc30003522" x="601.5" y="331.5" width="72.5" height="40.5" class="inc" />
-  <rect id="inc30003524" x="601.5" y="376.5" width="72.5" height="40.5" class="inc" />
-  <rect id="inc30003527" x="656.5" y="376.5" width="72.5" height="40.5" class="incs" />
-  <rect id="inc30003523" x="691.5" y="331.5" width="72.5" height="40.5" class="inc" />
-  <rect id="inc30003525" x="691.5" y="426.5" width="72.5" height="40.5" class="inc" />
-  <rect id="inc30003526" x="746.5" y="461.5" width="72.5" height="40.5" class="inc" />
+
 
 </g>
 

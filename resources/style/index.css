@@ -8,3 +8,9 @@ html {
 	top: 0;
 	right: 0;
 }
+
+#credentials {
+	position: absolute;
+	top: 5%;
+	right: 0;
+}

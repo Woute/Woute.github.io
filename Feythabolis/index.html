@@ -5,11 +5,19 @@
 		<meta content="True" name="Handheld">
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		<link rel="stylesheet" href="/resources/style/index.css" media="all"/>
-        <script src="/resources/scripts/common.js" type=text/javascript></script>
+		<script src="/resources/scripts/common.js" type=text/javascript></script>
+		<script src="/resources/scripts/index.js" type=text/javascript></script>
+		<script src="/resources/scripts/region.js" type=text/javascript></script>
 		<title>Feythabolis</title>
 	</head>
-   <input id="SSOButton" type="image" src="/resources/images/EVE_SSO_Login_Buttons_Large_Black.png" onclick="authSSO();"/>
-    <?xml version="1.0"?>
+<input id="SSOButton" type="image" src="/resources/images/EVE_SSO_Login_Buttons_Large_Black.png" onclick="authSSO();"/>
+<div id="credentials">
+	<input id="clientID" type="text" placeholder="Your clientID" />
+	<input id="secret" type="text" placeholder="Your secret" />
+	<input id="readCredentials" type="button" onclick="readCredentials();" />
+</div>
+
+<?xml version="1.0"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
@@ -157,7 +165,7 @@
     <a xlink:href="E-PR0S.html" class="sys link-5-30004451" target="_top">
       <rect id="rect30004451" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #6D6000;" />
       <text x="28" y="14" class="ss" text-anchor="middle">E-PR0S</text>
-      <text id="txt30004451" x="28" y="21.7" class="st so" text-anchor="middle">BoB (2)</text>
+      <text id="txt30004451" x="28" y="21.7" class="st so" text-anchor="middle">BoB (3)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="oa" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />
@@ -167,7 +175,7 @@
     <a xlink:href="VNGJ-U.html" class="sys link-5-30004453" target="_top">
       <rect id="rect30004453" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #6D6000;" />
       <text x="28" y="14" class="ss" text-anchor="middle">VNGJ-U</text>
-      <text id="txt30004453" x="28" y="21.7" class="st so" text-anchor="middle">BoB (2)</text>
+      <text id="txt30004453" x="28" y="21.7" class="st so" text-anchor="middle">BoB (3)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="o" />
     <polygon points="60.6,9.5 55.1,15 60.6,20.5 60.6,9.5" class="v2" />
@@ -221,14 +229,14 @@
     <a xlink:href="2-F3OE.html" class="sys link-5-30004454" target="_top">
       <rect id="rect30004454" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #6D6000;" />
       <text x="28" y="14" class="ss" text-anchor="middle">2-F3OE</text>
-      <text id="txt30004454" x="28" y="21.7" class="st so" text-anchor="middle">BoB (2)</text>
+      <text id="txt30004454" x="28" y="21.7" class="st so" text-anchor="middle">BoB (3)</text>
     </a>
   </symbol>
   <symbol id="def30004456">
     <a xlink:href="Y2-I3W.html" class="sys link-5-30004456" target="_top">
       <rect id="rect30004456" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #6D6000;" />
       <text x="28" y="14" class="ss" text-anchor="middle">Y2-I3W</text>
-      <text id="txt30004456" x="28" y="21.7" class="st so" text-anchor="middle">BoB (2)</text>
+      <text id="txt30004456" x="28" y="21.7" class="st so" text-anchor="middle">BoB (3)</text>
     </a>
   </symbol>
   <symbol id="def30004405">
@@ -259,7 +267,7 @@
     <a xlink:href="CL-J9W.html" class="sys link-5-30004458" target="_top">
       <rect id="rect30004458" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #6D6000;" />
       <text x="28" y="14" class="ss" text-anchor="middle">CL-J9W</text>
-      <text id="txt30004458" x="28" y="21.7" class="st so" text-anchor="middle">BoB (2)</text>
+      <text id="txt30004458" x="28" y="21.7" class="st so" text-anchor="middle">BoB (3)</text>
     </a>
   </symbol>
   <symbol id="def30004411">
@@ -398,7 +406,7 @@
     <a xlink:href="UB5Z-3.html" class="sys link-5-30004463" target="_top">
       <rect id="rect30004463" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #6D6000;" />
       <text x="28" y="14" class="ss" text-anchor="middle">UB5Z-3</text>
-      <text id="txt30004463" x="28" y="21.7" class="st so" text-anchor="middle">BoB (2)</text>
+      <text id="txt30004463" x="28" y="21.7" class="st so" text-anchor="middle">BoB (3)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="o" />
     <polygon points="49.6,9.5 60.6,9.5 55.1,15 49.6,9.5" class="v1" />
@@ -607,14 +615,14 @@
     <a xlink:href="M-PGT0.html" class="sys link-5-30004478" target="_top">
       <rect id="rect30004478" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #6D6000;" />
       <text x="28" y="14" class="ss" text-anchor="middle">M-PGT0</text>
-      <text id="txt30004478" x="28" y="21.7" class="st so" text-anchor="middle">BoB (1)</text>
+      <text id="txt30004478" x="28" y="21.7" class="st so" text-anchor="middle">BoB (2)</text>
     </a>
   </symbol>
   <symbol id="def30004484">
     <a xlink:href="SWBV-2.html" class="sys link-5-30004484" target="_top">
       <rect id="rect30004484" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #6D6000;" />
       <text x="28" y="14" class="ss" text-anchor="middle">SWBV-2</text>
-      <text id="txt30004484" x="28" y="21.7" class="st so" text-anchor="middle">BoB (1)</text>
+      <text id="txt30004484" x="28" y="21.7" class="st so" text-anchor="middle">BoB (2)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="og" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />
@@ -634,7 +642,7 @@
     <a xlink:href="NPD9-A.html" class="sys link-5-30004479" target="_top">
       <rect id="rect30004479" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #6D6000;" />
       <text x="28" y="14" class="ss" text-anchor="middle">NPD9-A</text>
-      <text id="txt30004479" x="28" y="21.7" class="st so" text-anchor="middle">BoB (1)</text>
+      <text id="txt30004479" x="28" y="21.7" class="st so" text-anchor="middle">BoB (2)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="om" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />
@@ -668,7 +676,7 @@
     <rect id="ice30004480" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
       <rect id="rect30004480" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #6D6000;" />
       <text x="28" y="14" class="ss" text-anchor="middle">D6SK-L</text>
-      <text id="txt30004480" x="28" y="21.7" class="st so" text-anchor="middle">BoB (1)</text>
+      <text id="txt30004480" x="28" y="21.7" class="st so" text-anchor="middle">BoB (2)</text>
     </a>
   </symbol>
   <symbol id="def30004483">
@@ -676,7 +684,7 @@
     <rect id="ice30004483" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
       <rect id="rect30004483" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #6D6000;" />
       <text x="28" y="14" class="ss" text-anchor="middle">0OYZ-G</text>
-      <text id="txt30004483" x="28" y="21.7" class="st so" text-anchor="middle">BoB (1)</text>
+      <text id="txt30004483" x="28" y="21.7" class="st so" text-anchor="middle">BoB (2)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="oa" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />
@@ -742,7 +750,7 @@
     <a xlink:href="I9-ZQZ.html" class="sys link-5-30004482" target="_top">
       <rect id="rect30004482" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #6D6000;" />
       <text x="28" y="14" class="ss" text-anchor="middle">I9-ZQZ</text>
-      <text id="txt30004482" x="28" y="21.7" class="st so" text-anchor="middle">BoB (1)</text>
+      <text id="txt30004482" x="28" y="21.7" class="st so" text-anchor="middle">BoB (2)</text>
     </a>
   </symbol>
   <symbol id="def30004485">
@@ -813,7 +821,7 @@
     <a xlink:href="6-ELQP.html" class="sys link-5-30004486" target="_top">
       <rect id="rect30004486" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #6D6000;" />
       <text x="28" y="14" class="ss" text-anchor="middle">6-ELQP</text>
-      <text id="txt30004486" x="28" y="21.7" class="st so" text-anchor="middle">BoB (1)</text>
+      <text id="txt30004486" x="28" y="21.7" class="st so" text-anchor="middle">BoB (2)</text>
     </a>
   </symbol>
   <symbol id="def30004441">

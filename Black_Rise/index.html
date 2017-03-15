@@ -5,11 +5,19 @@
 		<meta content="True" name="Handheld">
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		<link rel="stylesheet" href="/resources/style/index.css" media="all"/>
-        <script src="/resources/scripts/common.js" type=text/javascript></script>
+		<script src="/resources/scripts/common.js" type=text/javascript></script>
+		<script src="/resources/scripts/index.js" type=text/javascript></script>
+		<script src="/resources/scripts/region.js" type=text/javascript></script>
 		<title>Black_Rise</title>
 	</head>
-   <input id="SSOButton" type="image" src="/resources/images/EVE_SSO_Login_Buttons_Large_Black.png" onclick="authSSO();"/>
-    <?xml version="1.0"?>
+<input id="SSOButton" type="image" src="/resources/images/EVE_SSO_Login_Buttons_Large_Black.png" onclick="authSSO();"/>
+<div id="credentials">
+	<input id="clientID" type="text" placeholder="Your clientID" />
+	<input id="secret" type="text" placeholder="Your secret" />
+	<input id="readCredentials" type="button" onclick="readCredentials();" />
+</div>
+
+<?xml version="1.0"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
@@ -137,7 +145,7 @@
 <defs>
   <symbol id="def30045348">
     <a xlink:href="Notoras.html" class="sys link-5-30045348" target="_top">
-      <rect id="rect30045348" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-20);" />
+      <rect id="rect30045348" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-0);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Notoras</text>
       <text id="txt30045348" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -148,7 +156,7 @@
   </symbol>
   <symbol id="def30045352">
     <a xlink:href="Nisuwa.html" class="sys link-5-30045352" target="_top">
-      <rect id="rect30045352" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-20);" />
+      <rect id="rect30045352" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-0);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Nisuwa</text>
       <text id="txt30045352" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -159,7 +167,7 @@
   </symbol>
   <symbol id="def30045310">
     <a xlink:href="Sarenemi.html" class="sys link-5-30045310" target="_top">
-      <rect id="rect30045310" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-20);" />
+      <rect id="rect30045310" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-40);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Sarenemi</text>
       <text id="txt30045310" x="28" y="21.7" class="st" text-anchor="middle">Caldari</text>
     </a>
@@ -171,7 +179,7 @@
   <symbol id="def30045350">
     <a xlink:href="Teimo.html" class="sys link-5-30045350" target="_top">
     <rect id="ice30045350" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
-      <rect id="rect30045350" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-40);" />
+      <rect id="rect30045350" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-20);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Teimo</text>
       <text id="txt30045350" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -192,7 +200,7 @@
   </symbol>
   <symbol id="def30045306">
     <a xlink:href="Hykanima.html" class="sys link-5-30045306" target="_top">
-      <rect id="rect30045306" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-20);" />
+      <rect id="rect30045306" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-40);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Hykanima</text>
       <text id="txt30045306" x="28" y="21.7" class="st" text-anchor="middle">Caldari</text>
     </a>
@@ -212,7 +220,7 @@
   </symbol>
   <symbol id="def30045345">
     <a xlink:href="Hirri.html" class="sys link-5-30045345" target="_top">
-      <rect id="rect30045345" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-20);" />
+      <rect id="rect30045345" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-40);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Hirri</text>
       <text id="txt30045345" x="28" y="21.7" class="st" text-anchor="middle">Caldari</text>
     </a>
@@ -230,7 +238,7 @@
   </symbol>
   <symbol id="def30045349">
     <a xlink:href="Rakapas.html" class="sys link-5-30045349" target="_top">
-      <rect id="rect30045349" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-0);" />
+      <rect id="rect30045349" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-20);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Rakapas</text>
       <text id="txt30045349" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -286,7 +294,7 @@
   </symbol>
   <symbol id="def30045351">
     <a xlink:href="Iwisoda.html" class="sys link-5-30045351" target="_top">
-      <rect id="rect30045351" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-40);" />
+      <rect id="rect30045351" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-60);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Iwisoda</text>
       <text id="txt30045351" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -341,7 +349,7 @@
   </symbol>
   <symbol id="def30045336">
     <a xlink:href="Elunala.html" class="sys link-5-30045336" target="_top">
-      <rect id="rect30045336" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-20);" />
+      <rect id="rect30045336" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-40);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Elunala</text>
       <text id="txt30045336" x="28" y="21.7" class="st" text-anchor="middle">Caldari</text>
     </a>
@@ -394,7 +402,7 @@
   <symbol id="def30045341">
     <a xlink:href="Hallanen.html" class="sys link-5-30045341" target="_top">
     <rect id="ice30045341" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
-      <rect id="rect30045341" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-40);" />
+      <rect id="rect30045341" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-60);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Hallanen</text>
       <text id="txt30045341" x="28" y="21.7" class="st" text-anchor="middle">Caldari</text>
     </a>
@@ -431,7 +439,7 @@
   </symbol>
   <symbol id="def30045315">
     <a xlink:href="Raihbaka.html" class="sys link-5-30045315" target="_top">
-      <rect id="rect30045315" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-20);" />
+      <rect id="rect30045315" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-40);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Raihbaka</text>
       <text id="txt30045315" x="28" y="21.7" class="st" text-anchor="middle">Caldari</text>
     </a>
@@ -473,7 +481,7 @@
   </symbol>
   <symbol id="def30045319">
     <a xlink:href="Eha.html" class="sys link-5-30045319" target="_top">
-      <rect id="rect30045319" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: #233C61;" />
+      <rect id="rect30045319" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-0);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Eha</text>
       <text id="txt30045319" x="28" y="21.7" class="st" text-anchor="middle">Caldari</text>
     </a>
@@ -503,7 +511,7 @@
   </symbol>
   <symbol id="def30045314">
     <a xlink:href="Kinakka.html" class="sys link-5-30045314" target="_top">
-      <rect id="rect30045314" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-0);" />
+      <rect id="rect30045314" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-20);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Kinakka</text>
       <text id="txt30045314" x="28" y="21.7" class="st" text-anchor="middle">Caldari</text>
     </a>
@@ -800,6 +808,7 @@
   <rect id="inc30045315" x="613.5" y="125.5" width="71" height="38" class="con" />
   <rect id="inc30045344" x="618.5" y="560.5" width="71" height="38" class="con" />
   <rect id="inc30045339" x="623.5" y="485.5" width="71" height="38" class="con" />
+  <rect id="inc30045319" x="658.5" y="15.5" width="71" height="38" class="con" />
   <rect id="inc30045314" x="693.5" y="105.5" width="71" height="38" class="con" />
   <rect id="inc30045342" x="723.5" y="460.5" width="71" height="38" class="con" />
   <rect id="inc30045316" x="733.5" y="55.5" width="71" height="38" class="con" />

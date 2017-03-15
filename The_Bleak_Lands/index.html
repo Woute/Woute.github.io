@@ -5,11 +5,19 @@
 		<meta content="True" name="Handheld">
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		<link rel="stylesheet" href="/resources/style/index.css" media="all"/>
-        <script src="/resources/scripts/common.js" type=text/javascript></script>
+		<script src="/resources/scripts/common.js" type=text/javascript></script>
+		<script src="/resources/scripts/index.js" type=text/javascript></script>
+		<script src="/resources/scripts/region.js" type=text/javascript></script>
 		<title>The_Bleak_Lands</title>
 	</head>
-   <input id="SSOButton" type="image" src="/resources/images/EVE_SSO_Login_Buttons_Large_Black.png" onclick="authSSO();"/>
-    <?xml version="1.0"?>
+<input id="SSOButton" type="image" src="/resources/images/EVE_SSO_Login_Buttons_Large_Black.png" onclick="authSSO();"/>
+<div id="credentials">
+	<input id="clientID" type="text" placeholder="Your clientID" />
+	<input id="secret" type="text" placeholder="Your secret" />
+	<input id="readCredentials" type="button" onclick="readCredentials();" />
+</div>
+
+<?xml version="1.0"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
@@ -152,7 +160,7 @@
   </symbol>
   <symbol id="def30003079">
     <a xlink:href="Saikamon.html" class="sys link-5-30003079" target="_top">
-      <rect id="rect30003079" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: #6D6000;" />
+      <rect id="rect30003079" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-0);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Saikamon</text>
       <text id="txt30003079" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -269,7 +277,7 @@
   </symbol>
   <symbol id="def30003072">
     <a xlink:href="Iesa.html" class="sys link-5-30003072" target="_top">
-      <rect id="rect30003072" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-20);" />
+      <rect id="rect30003072" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-0);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Iesa</text>
       <text id="txt30003072" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -291,7 +299,7 @@
   </symbol>
   <symbol id="def30003077">
     <a xlink:href="Uusanen.html" class="sys link-5-30003077" target="_top">
-      <rect id="rect30003077" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-20);" />
+      <rect id="rect30003077" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-0);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Uusanen</text>
       <text id="txt30003077" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -354,7 +362,7 @@
   <symbol id="def30003070">
     <a xlink:href="Sosala.html" class="sys link-5-30003070" target="_top">
     <rect id="ice30003070" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
-      <rect id="rect30003070" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-0);" />
+      <rect id="rect30003070" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: #6D6000;" />
       <text x="28" y="14" class="ss" text-anchor="middle">Sosala</text>
       <text id="txt30003070" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -432,7 +440,7 @@
   </symbol>
   <symbol id="def30003069">
     <a xlink:href="Kamela.html" class="sys link-5-30003069" target="_top">
-      <rect id="rect30003069" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: #6D6000;" />
+      <rect id="rect30003069" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-0);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Kamela</text>
       <text id="txt30003069" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -473,7 +481,7 @@
   </symbol>
   <symbol id="def30003068">
     <a xlink:href="Kourmonen.html" class="sys link-5-30003068" target="_top">
-      <rect id="rect30003068" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-0);" />
+      <rect id="rect30003068" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: #6D6000;" />
       <text x="28" y="14" class="ss" text-anchor="middle">Kourmonen</text>
       <text id="txt30003068" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -706,6 +714,7 @@
 
   <rect id="inc30003090" x="128.5" y="45.5" width="71" height="38" class="con" />
   <rect id="inc30003087" x="193.5" y="140.5" width="71" height="38" class="con" />
+  <rect id="inc30003079" x="198.5" y="225.5" width="71" height="38" class="con" />
   <rect id="inc30003089" x="208.5" y="60.5" width="71" height="38" class="con" />
   <rect id="inc30003088" x="263.5" y="100.5" width="71" height="38" class="con" />
   <rect id="inc30003086" x="268.5" y="170.5" width="71" height="38" class="con" />
@@ -713,9 +722,8 @@
   <rect id="inc30003077" x="363.5" y="295.5" width="71" height="38" class="con" />
   <rect id="inc30003091" x="378.5" y="170.5" width="71" height="38" class="con" />
   <rect id="inc30003071" x="428.5" y="245.5" width="71" height="38" class="con" />
-  <rect id="inc30003070" x="463.5" y="315.5" width="71" height="38" class="con" />
+  <rect id="inc30003069" x="723.5" y="410.5" width="71" height="38" class="con" />
   <rect id="inc30003063" x="743.5" y="330.5" width="71" height="38" class="con" />
-  <rect id="inc30003068" x="833.5" y="330.5" width="71" height="38" class="con" />
   <rect id="inc30002087" x="224.5" y="10.5" width="71" height="38" class="con" />
   <rect id="inc30002980" x="318.5" y="50.5" width="71" height="38" class="con" />
   <rect id="inc30002957" x="743.5" y="285.5" width="71" height="38" class="con" />

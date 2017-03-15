@@ -5,11 +5,19 @@
 		<meta content="True" name="Handheld">
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		<link rel="stylesheet" href="/resources/style/index.css" media="all"/>
-        <script src="/resources/scripts/common.js" type=text/javascript></script>
+		<script src="/resources/scripts/common.js" type=text/javascript></script>
+		<script src="/resources/scripts/index.js" type=text/javascript></script>
+		<script src="/resources/scripts/region.js" type=text/javascript></script>
 		<title>Querious</title>
 	</head>
-   <input id="SSOButton" type="image" src="/resources/images/EVE_SSO_Login_Buttons_Large_Black.png" onclick="authSSO();"/>
-    <?xml version="1.0"?>
+<input id="SSOButton" type="image" src="/resources/images/EVE_SSO_Login_Buttons_Large_Black.png" onclick="authSSO();"/>
+<div id="credentials">
+	<input id="clientID" type="text" placeholder="Your clientID" />
+	<input id="secret" type="text" placeholder="Your secret" />
+	<input id="readCredentials" type="button" onclick="readCredentials();" />
+</div>
+
+<?xml version="1.0"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
@@ -441,7 +449,7 @@
     <rect id="ice30004007" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
       <rect id="rect30004007" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #233C61;" />
       <text x="28" y="14" class="ss" text-anchor="middle">4-GJT1</text>
-      <text id="txt30004007" x="28" y="21.7" class="st so" text-anchor="middle">MOON (4)</text>
+      <text id="txt30004007" x="28" y="21.7" class="st so" text-anchor="middle">MOON (5)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="om" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />
@@ -520,7 +528,7 @@
     <a xlink:href="YW-SYT.html" class="sys link-5-30003990" target="_top">
       <rect id="rect30003990" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #6D3941;" />
       <text x="28" y="14" class="ss" text-anchor="middle">YW-SYT</text>
-      <text id="txt30003990" x="28" y="21.7" class="st so" text-anchor="middle">N0FUX (2)</text>
+      <text id="txt30003990" x="28" y="21.7" class="st so" text-anchor="middle">N0FUX (3)</text>
     </a>
   </symbol>
   <symbol id="def30003991">
@@ -847,7 +855,7 @@
     <a xlink:href="YOP-0T.html" class="sys link-5-30003960" target="_top">
       <rect id="rect30003960" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #4B4760;" />
       <text x="28" y="14" class="ss" text-anchor="middle">YOP-0T</text>
-      <text id="txt30003960" x="28" y="21.7" class="st so" text-anchor="middle">VOLT (2)</text>
+      <text id="txt30003960" x="28" y="21.7" class="st so" text-anchor="middle">VOLT (3)</text>
     </a>
   </symbol>
   <symbol id="def30003943">
@@ -878,7 +886,7 @@
     <a xlink:href="0TKF-6.html" class="sys link-5-30003957" target="_top">
       <rect id="rect30003957" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #496023;" />
       <text x="28" y="14" class="ss" text-anchor="middle">0TKF-6</text>
-      <text id="txt30003957" x="28" y="21.7" class="st so" text-anchor="middle">TXG (2)</text>
+      <text id="txt30003957" x="28" y="21.7" class="st so" text-anchor="middle">TXG (3)</text>
     </a>
   </symbol>
   <symbol id="def30003987">

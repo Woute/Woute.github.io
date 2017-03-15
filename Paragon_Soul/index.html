@@ -5,11 +5,19 @@
 		<meta content="True" name="Handheld">
 		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 		<link rel="stylesheet" href="/resources/style/index.css" media="all"/>
-        <script src="/resources/scripts/common.js" type=text/javascript></script>
+		<script src="/resources/scripts/common.js" type=text/javascript></script>
+		<script src="/resources/scripts/index.js" type=text/javascript></script>
+		<script src="/resources/scripts/region.js" type=text/javascript></script>
 		<title>Paragon_Soul</title>
 	</head>
-   <input id="SSOButton" type="image" src="/resources/images/EVE_SSO_Login_Buttons_Large_Black.png" onclick="authSSO();"/>
-    <?xml version="1.0"?>
+<input id="SSOButton" type="image" src="/resources/images/EVE_SSO_Login_Buttons_Large_Black.png" onclick="authSSO();"/>
+<div id="credentials">
+	<input id="clientID" type="text" placeholder="Your clientID" />
+	<input id="secret" type="text" placeholder="Your secret" />
+	<input id="readCredentials" type="button" onclick="readCredentials();" />
+</div>
+
+<?xml version="1.0"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
   "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 
@@ -161,7 +169,7 @@
     <a xlink:href="O-N589.html" class="sys link-5-30004703" target="_top">
       <rect id="rect30004703" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #6D491E;" />
       <text x="28" y="14" class="ss" text-anchor="middle">O-N589</text>
-      <text id="txt30004703" x="28" y="21.7" class="st so" text-anchor="middle">TEST (1)</text>
+      <text id="txt30004703" x="28" y="21.7" class="st so" text-anchor="middle">TEST (2)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="oa" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />
@@ -178,7 +186,7 @@
     <a xlink:href="MP5-KR.html" class="sys link-5-30004702" target="_top">
       <rect id="rect30004702" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #6D491E;" />
       <text x="28" y="14" class="ss" text-anchor="middle">MP5-KR</text>
-      <text id="txt30004702" x="28" y="21.7" class="st so" text-anchor="middle">TEST (1)</text>
+      <text id="txt30004702" x="28" y="21.7" class="st so" text-anchor="middle">TEST (2)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="o" />
     <polygon points="60.6,9.5 55.1,15 60.6,20.5 60.6,9.5" class="v2" />
