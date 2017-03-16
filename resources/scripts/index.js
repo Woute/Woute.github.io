@@ -1,8 +1,10 @@
 'use strict';
 
-document.html.onkeyup = function(e) {
-	if (e.keyCode == 32) {
-		goTo(localStorage.getItem('location'));
+window.onload = function() {
+	document.body.onkeyup = function(e) {
+		if (e.keyCode == 32) {
+			goTo(localStorage.getItem('location'));
+		}
 	}
 }
 
