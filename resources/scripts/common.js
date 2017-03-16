@@ -65,6 +65,7 @@ function httpRequest(method, url, auth, data, headers) {
 					let result = JSON.parse(response);
 					localStorage.setItem('token', result.token);
 					localStorage.setItem('refresh_token', result.refresh_token);
+					xhr.open(method, url);
 					xhr.setRequestHeader('Authorization', 'Bearer ' + result.token);
 					refresh = false;
 					xhr.send(data);
