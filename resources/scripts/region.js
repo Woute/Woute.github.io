@@ -11,7 +11,10 @@ function setDestination(id) {
 			'id': id
 		}
 	}
-	httpRequest('POST', address, false, JSON.stringify(data))
+	let headers = {
+		'Authorization': 'Bearer ' + localStorage.getItem('token')
+	}
+	httpRequest('POST', address, false, JSON.stringify(data), JSON.stringify(headers))
 	.then(response => {
 		console.log(response);
 	})
