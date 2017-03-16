@@ -423,7 +423,7 @@
   </symbol>
   <symbol id="def30005300">
     <a xlink:href="Loes.html" class="sys link-5-30005300" target="_top">
-      <rect id="rect30005300" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-40);" />
+      <rect id="rect30005300" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-20);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Loes</text>
       <text id="txt30005300" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -456,7 +456,7 @@
   </symbol>
   <symbol id="def30005297">
     <a xlink:href="Ouelletta.html" class="sys link-5-30005297" target="_top">
-      <rect id="rect30005297" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-40);" />
+      <rect id="rect30005297" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-20);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Ouelletta</text>
       <text id="txt30005297" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -497,7 +497,7 @@
   </symbol>
   <symbol id="def30005296">
     <a xlink:href="Melmaniel.html" class="sys link-5-30005296" target="_top">
-      <rect id="rect30005296" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-20);" />
+      <rect id="rect30005296" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-40);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Melmaniel</text>
       <text id="txt30005296" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -1157,5 +1157,11 @@
 
 
 </svg>
-
+<script>
+	document.body.onkeyup = function(e) {
+		if (e.keyCode == 32) {
+			goTo(localStorage.getItem("location"));
+		}
+	}
+</script>
 </html>

@@ -363,7 +363,7 @@
   <symbol id="def30003070">
     <a xlink:href="Sosala.html" class="sys link-5-30003070" target="_top">
     <rect id="ice30003070" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
-      <rect id="rect30003070" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-0);" />
+      <rect id="rect30003070" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: #6D6000;" />
       <text x="28" y="14" class="ss" text-anchor="middle">Sosala</text>
       <text id="txt30003070" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -441,7 +441,7 @@
   </symbol>
   <symbol id="def30003069">
     <a xlink:href="Kamela.html" class="sys link-5-30003069" target="_top">
-      <rect id="rect30003069" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-0);" />
+      <rect id="rect30003069" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: #6D6000;" />
       <text x="28" y="14" class="ss" text-anchor="middle">Kamela</text>
       <text id="txt30003069" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -723,8 +723,6 @@
   <rect id="inc30003077" x="363.5" y="295.5" width="71" height="38" class="con" />
   <rect id="inc30003091" x="378.5" y="170.5" width="71" height="38" class="con" />
   <rect id="inc30003071" x="428.5" y="245.5" width="71" height="38" class="con" />
-  <rect id="inc30003070" x="463.5" y="315.5" width="71" height="38" class="con" />
-  <rect id="inc30003069" x="723.5" y="410.5" width="71" height="38" class="con" />
   <rect id="inc30003063" x="743.5" y="330.5" width="71" height="38" class="con" />
   <rect id="inc30002087" x="224.5" y="10.5" width="71" height="38" class="con" />
   <rect id="inc30002980" x="318.5" y="50.5" width="71" height="38" class="con" />
@@ -854,5 +852,11 @@
 
 
 </svg>
-
+<script>
+	document.body.onkeyup = function(e) {
+		if (e.keyCode == 32) {
+			goTo(localStorage.getItem("location"));
+		}
+	}
+</script>
 </html>

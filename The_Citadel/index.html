@@ -391,7 +391,7 @@
   </symbol>
   <symbol id="def30002810">
     <a xlink:href="Eranakko.html" class="sys link-5-30002810" target="_top">
-      <rect id="rect30002810" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-20);" />
+      <rect id="rect30002810" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-40);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Eranakko</text>
       <text id="txt30002810" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -1760,5 +1760,11 @@
 
 
 </svg>
-
+<script>
+	document.body.onkeyup = function(e) {
+		if (e.keyCode == 32) {
+			goTo(localStorage.getItem("location"));
+		}
+	}
+</script>
 </html>

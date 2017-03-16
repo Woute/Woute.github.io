@@ -1,13 +1,5 @@
 'use strict';
 
-window.onload = function() {
-	document.body.onkeyup = function(e) {
-		if (e.keyCode == 32) {
-			goTo(localStorage.getItem('location'));
-		}
-	}
-}
-
 function authSSO() {
 	let url = 'https://login.eveonline.com/oauth/authorize/';
 	let redirect_uri = 'https%3A%2F%2Fwoute.github.io%2Fcallback.html';

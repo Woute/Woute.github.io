@@ -194,7 +194,7 @@
   </symbol>
   <symbol id="def30002514">
     <a xlink:href="Bosboger.html" class="sys link-5-30002514" target="_top">
-      <rect id="rect30002514" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500002-0);" />
+      <rect id="rect30002514" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500002-20);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Bosboger</text>
       <text id="txt30002514" x="28" y="21.7" class="st" text-anchor="middle">Minmatar</text>
     </a>
@@ -1589,5 +1589,11 @@
 
 
 </svg>
-
+<script>
+	document.body.onkeyup = function(e) {
+		if (e.keyCode == 32) {
+			goTo(localStorage.getItem("location"));
+		}
+	}
+</script>
 </html>

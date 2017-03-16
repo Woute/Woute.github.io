@@ -608,7 +608,7 @@
     <a xlink:href="Z-FET0.html" class="sys link-5-30002368" target="_top">
       <rect id="rect30002368" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #534425;" />
       <text x="28" y="14" class="ss" text-anchor="middle">Z-FET0</text>
-      <text id="txt30002368" x="28" y="21.7" class="st so" text-anchor="middle">DEUSV (0)</text>
+      <text id="txt30002368" x="28" y="21.7" class="st so" text-anchor="middle">DEUSV (1)</text>
     </a>
   </symbol>
   <symbol id="def30002365">
@@ -719,7 +719,7 @@
     <rect id="ice30002342" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
       <rect id="rect30002342" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #534425;" />
       <text x="28" y="14" class="ss" text-anchor="middle">2B-UUQ</text>
-      <text id="txt30002342" x="28" y="21.7" class="st so" text-anchor="middle">DEUSV (0)</text>
+      <text id="txt30002342" x="28" y="21.7" class="st so" text-anchor="middle">DEUSV (1)</text>
     </a>
   </symbol>
   <symbol id="def30002345">
@@ -1398,5 +1398,11 @@
 
 
 </svg>
-
+<script>
+	document.body.onkeyup = function(e) {
+		if (e.keyCode == 32) {
+			goTo(localStorage.getItem("location"));
+		}
+	}
+</script>
 </html>

@@ -670,7 +670,7 @@
   </symbol>
   <symbol id="def30003829">
     <a xlink:href="Renarelle.html" class="sys link-5-30003829" target="_top">
-      <rect id="rect30003829" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-60);" />
+      <rect id="rect30003829" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-80);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Renarelle</text>
       <text id="txt30003829" x="28" y="21.7" class="st" text-anchor="middle">Caldari</text>
     </a>
@@ -754,7 +754,7 @@
   </symbol>
   <symbol id="def30003837">
     <a xlink:href="Aldranette.html" class="sys link-5-30003837" target="_top">
-      <rect id="rect30003837" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-20);" />
+      <rect id="rect30003837" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-40);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Aldranette</text>
       <text id="txt30003837" x="28" y="21.7" class="st" text-anchor="middle">Caldari</text>
     </a>
@@ -764,7 +764,7 @@
   </symbol>
   <symbol id="def30003836">
     <a xlink:href="Vlillirier.html" class="sys link-5-30003836" target="_top">
-      <rect id="rect30003836" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-20);" />
+      <rect id="rect30003836" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-0);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Vlillirier</text>
       <text id="txt30003836" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -868,7 +868,7 @@
   </symbol>
   <symbol id="def30003791">
     <a xlink:href="Annancale.html" class="sys link-5-30003791" target="_top">
-      <rect id="rect30003791" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-0);" />
+      <rect id="rect30003791" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-20);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Annancale</text>
       <text id="txt30003791" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -1098,7 +1098,6 @@
   <rect id="inc30003791" x="903.5" y="445.5" width="71" height="38" class="con" />
   <rect id="inc30003789" x="933.5" y="390.5" width="71" height="38" class="con" />
   <rect id="inc30045344" x="718.5" y="25.5" width="71" height="38" class="con" />
-  <rect id="inc30045319" x="818.5" y="45.5" width="71" height="38" class="con" />
   <rect id="inc30005300" x="818.5" y="460.5" width="71" height="38" class="con" />
 </g>
 
@@ -1305,5 +1304,11 @@
 
 
 </svg>
-
+<script>
+	document.body.onkeyup = function(e) {
+		if (e.keyCode == 32) {
+			goTo(localStorage.getItem("location"));
+		}
+	}
+</script>
 </html>
