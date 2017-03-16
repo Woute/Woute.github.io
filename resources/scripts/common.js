@@ -2,7 +2,7 @@
 
 window.onload = function() {
 	console.log('Window loaded');
-	setInterval(getLocation, 6000);
+	setInterval(getLocation, 5000);
 }
 
 function goTo(page) {
@@ -18,11 +18,27 @@ function getLocation() {
 		return false;
 	}
     let address = 'https://crest-tq.eveonline.com/characters/' + characterID.toString() + '/location/';
+    let system = '';
 	httpRequest('GET', address, true)
 	.then(response => {
 		let result = JSON.parse(response);
-		console.log('Current location : ' + result.solarSystem.name);
-		localStorage.setItem('location', result.solarSystem.name);
+		system = result.solarSystem.name;
+		return httpRequest('GET', result.solarSystem.href, false);
+	})
+	.then(response => {
+		let result = JSON.parse(response);
+		return httpRequest('GET', result.constellation.href, false);
+	})
+	.then(response => {
+		let result = JSON.parse(response);
+		return httpRequest('GET', result.region.href, false);
+	})
+	.then(response => {
+		let result = JSON.parse(response);
+		let location = result.name + '/' + system;
+		console.log('Current location : ' + location);
+		localStorage.setItem('location', location);
+		return true;
 	})
 	.catch(err => {
 		console.log(err);
