@@ -14,17 +14,15 @@ function goTo(page) {
 
 function getLocation() {
 	let characterID = localStorage.getItem('characterID');
-	console.log('Getting location for characterID : ' + characterID);
 	if (typeof characterID == 'undefined' || characterID == '' || characterID == null) {
 		return false;
 	}
     let address = 'https://crest-tq.eveonline.com/characters/' + characterID.toString() + '/location/';
 	httpRequest('GET', address, true)
 	.then(response => {
-		console.log(response);
 		let result = JSON.parse(response);
-		console.log('Current location : ' + result.name);
-		localStorage.setItem('location', result.name);
+		console.log('Current location : ' + result.solarSystem.name);
+		localStorage.setItem('location', result.solarSystem.name);
 	})
 	.catch(err => {
 		console.log(err);
@@ -40,7 +38,7 @@ function httpRequest(method, url, auth, data, headers) {
 			if (this.status >= 200 && this.status < 300) {
 				resolve(xhr.response);
 			} else if (refresh && auth && this.status == 401) {
-				let refreshUrl = 'https://evescanner-gatekeeper.herokuapp.com/authenticate';
+				let refreshUrl = 'https://evescanner-gatekeeper.herokuapp.com/refresh';
 				let refreshData = {
 					'clientID': localStorage.getItem('clientID'),
 					'secret': localStorage.getItem('secret'),
