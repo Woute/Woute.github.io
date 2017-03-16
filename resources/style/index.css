@@ -7,10 +7,11 @@ html {
 	position: absolute;
 	top: 0;
 	right: 0;
+	height: 5%;
 }
 
 #credentials {
 	position: absolute;
-	top: 10%;
-	right: 5%;
+	top: 5%;
+	right: 1%;
 }
