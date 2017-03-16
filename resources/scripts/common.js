@@ -17,7 +17,8 @@ function getLocation() {
     let address = 'https://crest-tq.eveonline.com/characters/' + characterID.toString() + '/location/';
 	httpRequest('GET', address, true)
 	.then(response => {
-		let result = JSON.parse(result);
+		let result = JSON.parse(response);
+		console.log('Current location : ' + result.name);
 		localStorage.setItem('location', result.name);
 	})
 	.catch(err => {
