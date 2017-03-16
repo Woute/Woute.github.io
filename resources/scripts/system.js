@@ -8,22 +8,24 @@ document.onkeyup = function(e) {
 	}
 	if (e.keyCode == 32) {
 		let tracking = localStorage.getItem('tracking');
-		console.log(tracking);
-		//displayTrackingPopUp(tracking);
+		if (tracking == null || tracking == 'enabled') {
+			tracking = 'disabled';
+			localStorage.setItem('tracking', tracking);
+		} else {
+			tracking = 'enabled';
+			localStorage.setItem('tracking', tracking);
+		}
+		displayTrackingPopUp(tracking);
 	}
 	if (e.keyCode == 8) {
 		goTo('index');
 	}
 }
 
-function displayTrackingPopUp(enabled) {
+function displayTrackingPopUp(tracking) {
 	var Tracking = document.getElementById('Tracking');
 	var TrackingText = document.getElementById('TrackingText');
-	if (enabled) {
-		TrackingText.innerHTML = 'Tracking enabled';
-	} else {
-		TrackingText.innerHTML = 'Tracking disabled'
-	}
+	TrackingText.innerHTML = 'Tracking ' + tracking;
 	Tracking.style.MozAnimationName = 'TrackingPopUp';
 	Tracking.style.MozAnimationDuration = '8s';
 	Tracking.style.OAnimationName = 'TrackingPopUp';
