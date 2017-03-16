@@ -26,17 +26,5 @@
 		if (state !== localStorage.getItem('state')) {
 			window.location.href = url;
 		}
-		let address = 'https://evescanner-gatekeeper.herokuapp.com/authenticate/' + code;
-		httpRequest('GET', address)
-		.then(response => {
-			let token = JSON.parse(response).token;
-			localStorage.setItem('token', token);
-			address = 'https://login.eveonline.com/oauth/verify';
-			return httpRequest('GET', address, true);
-			//window.location.href = url;
-		})
-		.then(response => {
-			console.log(response);
-		})
 	</script>
 </html>
