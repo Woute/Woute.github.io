@@ -13,6 +13,7 @@ function goTo(page) {
 
 function getLocation() {
 	let characterID = localStorage.getItem('characterID');
+	console.log('Getting location for characterID : ' + characterID);
 	if (typeof characterID == 'undefined' || characterID == '' || characterID == null) {
 		return false;
 	}
