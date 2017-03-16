@@ -2,7 +2,7 @@
 
 document.onkeyup = function(e) {
 	if (e.keyCode == 32) {
-		goTo('/' + localStorage.getItem("location"));
+		goTo(localStorage.getItem("location"));
 	}
 	if (e.keyCode == 8) {
 		if (document.title != 'New Eden') {
