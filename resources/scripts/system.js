@@ -24,6 +24,9 @@ document.onkeyup = function(e) {
 
 function displayTrackingPopUp(tracking) {
 	var Tracking = document.getElementById('Tracking');
+	Tracking.addEventListener('webkitAnimationEnd', function() {
+		Tracking.style.webkitAnimationPlayState = 'paused';
+	});
 	Tracking.classList.add('animation-reset');
 	void Tracking.offsetWidth;
 	Tracking.classList.remove('animation-reset');
