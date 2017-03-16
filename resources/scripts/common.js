@@ -2,7 +2,7 @@
 
 window.onload = function() {
 	console.log('Window loaded');
-	setInterval(getLocation(), 6000);
+	setInterval(getLocation, 6000);
 }
 
 function goTo(page) {
