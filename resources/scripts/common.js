@@ -38,6 +38,9 @@ function getLocation() {
 		let location = result.name + '/' + system;
 		console.log('Current location : ' + location);
 		localStorage.setItem('location', location);
+		if (typeof tracking != 'undefined' && tracking == true) {
+			goTo(location);
+		}
 		return true;
 	})
 	.catch(err => {

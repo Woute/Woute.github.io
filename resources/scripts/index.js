@@ -1,5 +1,16 @@
 'use strict';
 
+document.onkeyup = function(e) {
+	if (e.keyCode == 32) {
+		goTo(localStorage.getItem("location"));
+	}
+	if (e.keyCode == 8) {
+		if (document.title != 'New Eden') {
+			goTo('/index');
+		}
+	}
+}
+
 function authSSO() {
 	let url = 'https://login.eveonline.com/oauth/authorize/';
 	let redirect_uri = 'https%3A%2F%2Fwoute.github.io%2Fcallback.html';

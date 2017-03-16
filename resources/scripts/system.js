@@ -1,16 +1,36 @@
 'use strict';
 let cache = {};
 let signatures = {};
+let tracking = true;
 
-window.onload = setInterval(function() {
-	
-}, 5000);
-
-document.onkeydown = function(e) {
+document.onkeyup = function(e) {
 	if (e.ctrlKey && e.keyCode == 90) {
 		ctrlZ(document.title);
 	}
-}	
+	if (e.keyCode == 32) {
+		tracking = !tracking;
+		displayTrackingPopUp(tracking);
+	}
+	if (e.keyCode == 8) {
+		goTo('index');
+	}
+}
+
+function displayTrackingPopUp(enabled) {
+	var Tracking = document.getElementById('Tracking');
+	var TrackingText = document.getElementById('TrackingText');
+	if (enabled) {
+		TrackingText.innerHTML = 'Tracking enabled';
+	} else {
+		TrackingText.innerHTML = 'Tracking disabled'
+	}
+	Tracking.style.MozAnimationName = 'TrackingPopUp';
+	Tracking.style.MozAnimationDuration = '8s';
+	Tracking.style.OAnimationName = 'TrackingPopUp';
+	Tracking.style.OAnimationDuration = '8s';
+	Tracking.style.WebkitAnimationName = 'TrackingPopUp';
+	Tracking.style.WebkitAnimationDuration = '8s';
+}
 
 function ctrlZ(system) {
 	signatures = JSON.parse(localStorage.getItem("backup_" + system));
@@ -22,9 +42,8 @@ function ctrlZ(system) {
 }
 
 function saveCache(system) {
-	console.log(signatures);
-	for (sig in signatures) {
-		delete signatures[sig].isNew;
+	for (sigId in signatures) {
+		delete signatures[sigId].isNew;
 	}
 	localStorage.setItem("cache_" + system, JSON.stringify(signatures));
 }
@@ -78,7 +97,7 @@ function displaySignatures(system) {
 			tmp = document.createElement("td");
 			tmp.className = "combat";
 			let combat = document.createElement("button");
-			combat.style.background = "url(\"../images/combat.png\") top no-repeat";
+			combat.style.background = "url(\"../resources/images/combat.png\") top no-repeat";
 			combat.setAttribute("sigId", sigId);
 			combat.onclick = function() {
 				makeCombat(this.getAttribute("sigId"), system);
@@ -112,15 +131,6 @@ function parseSignatures(results, system) {
 		if (lines[i].indexOf("Anomaly") == -1) {
 			parseLineToCache(lines[i]);
 			++j;
-		}
-		else if (lines[i].match(/Covert/i)) {
-			let GhostSite = document.getElementById("GhostSite");
-			GhostSite.style.MozAnimationName = "GhostSitePopUp";
-			GhostSite.style.MozAnimationDuration = "8s";
-			GhostSite.style.OAnimationName = "GhostSitePopUp";
-			GhostSite.style.OAnimationDuration = "8s";
-			GhostSite.style.WebkitAnimationName = "GhostSitePopUp";
-			GhostSite.style.WebkitAnimationDuration = "8s";
 		}
 	}
 	displaySignatures(system);
