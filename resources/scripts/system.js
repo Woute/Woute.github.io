@@ -24,14 +24,17 @@ document.onkeyup = function(e) {
 
 function displayTrackingPopUp(tracking) {
 	var Tracking = document.getElementById('Tracking');
+	Tracking.classList.add('animation-reset');
+	void Tracking.offsetWidth;
+	Tracking.classList.remove('animation-reset');
 	var TrackingText = document.getElementById('TrackingText');
 	TrackingText.innerHTML = 'Tracking ' + tracking;
 	Tracking.style.MozAnimationName = 'TrackingPopUp';
-	Tracking.style.MozAnimationDuration = '8s';
+	Tracking.style.MozAnimationDuration = '4s';
 	Tracking.style.OAnimationName = 'TrackingPopUp';
-	Tracking.style.OAnimationDuration = '8s';
+	Tracking.style.OAnimationDuration = '4s';
 	Tracking.style.WebkitAnimationName = 'TrackingPopUp';
-	Tracking.style.WebkitAnimationDuration = '8s';
+	Tracking.style.WebkitAnimationDuration = '4s';
 }
 
 function ctrlZ(system) {

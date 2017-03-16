@@ -42,9 +42,8 @@ function getLocation() {
 		console.log('Current location : ' + location);
 		localStorage.setItem('location', location);
 		let tracking = localStorage.getItem('tracking');
-		if (typeof displayTrackingPopUp === 'function' && (tracking == 'enabled' || tracking == null) && window.location.pathname != location) {
-			console.log(window.location.pathname + ' _ ' + location);
-			//goTo(location);
+		if (typeof displayTrackingPopUp === 'function' && (tracking == 'enabled' || tracking == null) && window.location.pathname != location + '.html') {
+			goTo(location);
 		}
 		return true;
 	})
