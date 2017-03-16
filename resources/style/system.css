@@ -8,7 +8,7 @@
 body, html {
 	height: 100%;
 	width: 100%;
-	background: rgb(0, 0, 0);
+	background: rgb(70, 70, 70);
 }
 
 @keyframes TrackingPopUp {
@@ -21,7 +21,6 @@ body, html {
 #Tracking {
 	position: absolute;
 	top: -100px;
-	margin: auto;
 	height: 100px;
 	width: 30%;
 	text-align: center;
