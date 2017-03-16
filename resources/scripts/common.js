@@ -1,10 +1,28 @@
 'use strict';
 
+setInterval(getLocation(), 6000);
+
 function goTo(page) {
-	if (page == "") {
-		return true;
+	if (typeof page == 'undefined' || page == '' || page == null) {
+		return false;
 	}
 	window.location.href = page + '.html';
+}
+
+function getLocation() {
+	let characterID = localStorage.getItem('characterID');
+	if (typeof characterID == 'undefined' || characterID == '' || characterID == null) {
+		return false;
+	}
+    let address = 'https://crest-tq.eveonline.com/characters/' + characterID.toString() + '/location/';
+	httpRequest('GET', address, true)
+	.then(response => {
+		let result = JSON.parse(result);
+		localStorage.setItem('location', result.name);
+	})
+	.catch(err => {
+		console.log(err);
+	})
 }
 
 function httpRequest(method, url, auth, data, headers) {
