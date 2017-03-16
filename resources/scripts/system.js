@@ -47,7 +47,7 @@ function ctrlZ(system) {
 }
 
 function saveCache(system) {
-	for (sigId in signatures) {
+	for (let sigId in signatures) {
 		delete signatures[sigId].isNew;
 	}
 	localStorage.setItem("cache_" + system, JSON.stringify(signatures));
