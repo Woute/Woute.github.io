@@ -16,4 +16,6 @@ function readCredentials() {
 	let secret = document.getElementById('secret').value;
 	localStorage.setItem('clientID', clientID);
 	localStorage.setItem('secret', secret);
+	clientID = '';
+	secret = '';
 }
