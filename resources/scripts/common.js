@@ -35,10 +35,10 @@ function getLocation() {
 	})
 	.then(response => {
 		let result = JSON.parse(response);
-		let location = result.name + '/' + system;
+		let location = '/' + result.name + '/' + system;
 		console.log('Current location : ' + location);
 		localStorage.setItem('location', location);
-		if (typeof tracking != 'undefined' && tracking == true) {
+		if (typeof tracking != 'undefined' && tracking == true && window.location.pathname != location) {
 			goTo(location);
 		}
 		return true;
