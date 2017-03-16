@@ -26,7 +26,7 @@
 		if (state !== localStorage.getItem('state')) {
 			window.location.href = url;
 		}
-		let address = 'https://evescanner-gatekeeper.heroku.com/authenticate';
+		let address = 'https://evescanner-gatekeeper.herokuapp.com/authenticate';
 		let data = {
 			'clientID': localStorage.getItem('clientID'),
 			'secret': localStorage.getItem('secret'),
