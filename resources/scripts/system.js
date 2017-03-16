@@ -1,15 +1,15 @@
 'use strict';
 let cache = {};
 let signatures = {};
-let tracking = true;
 
 document.onkeyup = function(e) {
 	if (e.ctrlKey && e.keyCode == 90) {
 		ctrlZ(document.title);
 	}
 	if (e.keyCode == 32) {
-		tracking = !tracking;
-		displayTrackingPopUp(tracking);
+		let tracking = localStorage.getItem('tracking');
+		console.log(tracking);
+		//displayTrackingPopUp(tracking);
 	}
 	if (e.keyCode == 8) {
 		goTo('index');
