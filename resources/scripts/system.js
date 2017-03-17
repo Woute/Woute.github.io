@@ -38,6 +38,9 @@ document.onkeyup = function(e) {
 	if (e.keyCode == 8) {
 		goTo('region');
 	}
+	if (e.keyCode == 27) {
+		document.getElementById('iframe').style.display = 'none';
+	}
 }
 
 document.onpaste = function(e) {
@@ -138,13 +141,7 @@ function newCScan(input) {
 	.then(response => {
 		console.log(response);
 		let iframe = document.getElementById('iframe');
-		while (iframe.firstChild) {
-			iframe.removeChild(iframe.firstChild);
-		}
-		let evepraisalFrame = document.createElement('IFRAME');
-		evepraisalFrame.id = 'evepraisalFrame';
-		evepraisalFrame.innerHTML = response;
-		iframe.appendChild(evepraisalFrame);
+		iframe.innerHTML = response;
 		iframe.style.display = 'inline-block';
 	})
 	.catch(err => {
