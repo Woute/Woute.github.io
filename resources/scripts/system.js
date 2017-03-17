@@ -153,7 +153,7 @@ function newZKill(input) {
 }
 
 function displaySignatures(system) {
-	let resultsTab = document.getElementById("results");
+	let resultsTab = document.getElementById("PScanResults");
 	resultsTab.innerHTML = "";
 	for (let i = 0 ; i < Object.keys(signatures).length ; ++i) {
 		let tr = document.createElement("tr");
@@ -169,7 +169,7 @@ function displaySignatures(system) {
 		tr.appendChild(tmp);
 		if (signatures[sigId].type == "???") {
 			tmp = document.createElement("td");
-			tmp.className = "combat";
+			tmp.className = "isCombat";
 			let combat = document.createElement("button");
 			combat.style.background = "url(\"../resources/images/combat.png\") top no-repeat";
 			combat.setAttribute("sigId", sigId);
@@ -181,12 +181,12 @@ function displaySignatures(system) {
 		}
 		tmp = document.createElement("td");
 		tmp.id = sigId + "_type";
-		tmp.className = "type";
+		tmp.className = "sigType";
 		tmp.innerHTML = signatures[sigId].type;
 		tr.appendChild(tmp);
 		tmp = document.createElement("td");
 		tmp.id = sigId + "_name";
-		tmp.className = "name";
+		tmp.className = "sigName";
 		tmp.innerHTML = signatures[sigId].name;
 		tr.appendChild(tmp);
 		resultsTab.appendChild(tr);
@@ -194,7 +194,7 @@ function displaySignatures(system) {
 }
 
 function parseSignatures(results, system) {
-	let resultsTab = document.getElementById("results");
+	let resultsTab = document.getElementById("PScanResults");
 	cache = JSON.parse(localStorage.getItem("cache_" + system));
 	if (results == null) {
 		return true;
