@@ -66,7 +66,7 @@ function changeSystem() {
 	let system = tmp[1];
 	document.title = system;
 	document.getElementById('systemName').innerHTML = system;
-	history.pushState({}, system, window.location + '?location=' + region + '/' + system);
+	history.pushState({}, system, window.location.hostname + '/system.html?location=' + region + '/' + system);
 	checkResults(system);
 }
 
