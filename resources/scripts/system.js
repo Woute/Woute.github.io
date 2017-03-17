@@ -57,6 +57,7 @@ function changeSystem() {
 	let system = tmp[1];
 	document.title = system;
 	document.getElementById('systemName').innerHTML = system;
+	history.state.push({}, '', region + '/' + system);
 	checkResults(system);
 }
 
