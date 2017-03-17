@@ -146,7 +146,7 @@ function newCScan(input) {
 		CScanResults.style.height = '100%';
 		iframe.appendChild(CScanResults);
 		CScanResults.contentWindow.document.open();
-		CScanResults.contentWindow.document.write('<div style="overflow: hidden">' + response '</div>');
+		CScanResults.contentWindow.document.write('<div style="overflow: hidden">' + response + '</div>');
 		CScanResults.contentWindow.document.close();
 		iframe.style.display = 'inline-block';
 	})
