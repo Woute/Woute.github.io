@@ -66,7 +66,7 @@ function changeSystem() {
 	let system = tmp[1];
 	document.title = system;
 	document.getElementById('systemName').innerHTML = system;
-	//history.pushState({}, system, region + '/' + system);
+	history.pushState({}, system, window.location + '?location=' + region + '/' + system);
 	checkResults(system);
 }
 
@@ -114,6 +114,7 @@ function makeCombat(sigId, system) {
 
 function checkResults(system) {
 	signatures = JSON.parse(localStorage.getItem("cache_" + system));
+	if (signatures == null) signatures = {};
 	displaySignatures(system);
 }
 
