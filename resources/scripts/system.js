@@ -145,9 +145,12 @@ function newCScan(input) {
 		CScanResults.style.width = '100%';
 		CScanResults.style.height = '100%';
 		iframe.appendChild(CScanResults);
-		CScanResults.contentWindow.document.open();
-		CScanResults.contentWindow.document.write('<div style="overflow: hidden">' + response + '</div>');
-		CScanResults.contentWindow.document.close();
+		let d = (CScanResults.contentWindow || CScanResults.contentDocument);
+		if (d.document) d = d.document;
+		d.open();
+		d.body.style.overflow = 'hidden';
+		d.write(response);
+		d.close();
 		iframe.style.display = 'inline-block';
 	})
 	.catch(err => {
