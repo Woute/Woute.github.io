@@ -157,7 +157,7 @@ function newCScan(input) {
 		iframe.style.display = 'inline-block';
 	})
 	.catch(err => {
-		reject(err);
+		console.log(err);
 	})
 }
 
