@@ -8,7 +8,8 @@
 body, html {
 	height: 100%;
 	width: 100%;
-	background: rgb(170, 170, 170);
+	background: url("/resources/images/background.png");
+	-webkit-background-size: cover;
 }
 
 @keyframes TrackingPopUp {
@@ -22,9 +23,10 @@ body, html {
 	position: absolute;
 	top: -100px;
 	height: 100px;
-	left: 35%;
 	width: 30%;
+	left: 35%;
 	text-align: center;
+	line-height: 90px;
 	font-size: 40px;
 	color: rgba(0, 0, 0, 1);
 	background: rgba(220, 220, 220, 0.8);

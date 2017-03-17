@@ -34,11 +34,11 @@ function displayTrackingPopUp(tracking) {
 	body.appendChild(Tracking);
 	TrackingText.innerHTML = 'Tracking ' + tracking;
 	Tracking.style.MozAnimationName = 'TrackingPopUp';
-	Tracking.style.MozAnimationDuration = '4s';
+	Tracking.style.MozAnimationDuration = '2s';
 	Tracking.style.OAnimationName = 'TrackingPopUp';
-	Tracking.style.OAnimationDuration = '4s';
+	Tracking.style.OAnimationDuration = '2s';
 	Tracking.style.WebkitAnimationName = 'TrackingPopUp';
-	Tracking.style.WebkitAnimationDuration = '4s';
+	Tracking.style.WebkitAnimationDuration = '2s';
 }
 
 function ctrlZ(system) {
