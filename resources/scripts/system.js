@@ -31,7 +31,7 @@ document.onpaste = function(e) {
 	} else if (e.clipboardData && e.clipboardData.getData) {
 		pastedText = e.clipboardData.getData('text/plain');
 	}
-	alert(pastedText); // Process and handle text...
+	newPScan(pastedText, document.title);
 	return false; // Prevent the default handler from running.
 };
 
@@ -84,20 +84,11 @@ function checkResults(system) {
 	}
 }
 
-function checkEnter(system) {
-	let key = window.event.keyCode;
+function newPScan(input, system) {
 	signatures = {};
-	if (key == 13) {
-		// fill in results
-		if (typeof(Storage) != "undefined") {
-			let reader = document.getElementById("reader");
-			localStorage.setItem("backup_" + system, localStorage.getItem("cache_" + system));
-			parseSignatures(reader.value, system);
-		}
-	}
-	else {
-		return true;
-	}
+	// fill in results
+	localStorage.setItem("backup_" + system, localStorage.getItem("cache_" + system));
+	parseSignatures(input, system);
 }
 
 function displaySignatures(system) {
