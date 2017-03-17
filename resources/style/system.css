@@ -65,10 +65,10 @@ body, html {
 
 #scanResults {
 	position: absolute;
-	top: 0;
-	right: 0;
+	top: 15%;
+	left: 0;
 	height: 85%;
-	width: 50%;
+	width: 60%;
 	background: #444444;
 }
 	#results {
