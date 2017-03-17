@@ -47,7 +47,13 @@ document.onpaste = function(e) {
 	} else if (e.clipboardData && e.clipboardData.getData) {
 		pastedText = e.clipboardData.getData('text/plain');
 	}
-	newPScan(pastedText, document.title);
+	if (pastedText.match(/[A-Z]{3}-[0-9]{3}\s+Cosmic\s(?:Anomaly|Signature)\s+/g)) {
+		newPScan(pastedText, document.title);
+	} else if (pastedText.match(/[0-9]+\s[a-zA-Z\s-]+/g)) {
+		newCScan(pastedText);
+	} else {
+		newZKill(pastedText);
+	}
 	return false; // Prevent the default handler from running.
 };
 
@@ -115,6 +121,29 @@ function newPScan(input, system) {
 	// fill in results
 	localStorage.setItem("backup_" + system, localStorage.getItem("cache_" + system));
 	parseSignatures(input, system);
+}
+
+function newCScan(input) {
+	let lines = input.split('\n');
+	let raw = '';
+	for (let i = 0 ; i < lines.length ; ++i) {
+		raw += lines[i].replace(' ', '+') + '%0A';
+	}
+	raw = 'raw_paste=' + raw + '&hide_buttons=false&paste_autosubmit=false&market=30000142&save=true';
+	let data = {
+		'raw': raw
+	}
+	let url = 'https://evescanner-gatekeeper.herokuapp.com/evepraisal';
+	httpRequest('POST', url, false, JSON.stringify(data), {'Content-Type': 'application/json'})
+	.then(response => {
+		console.log(response);
+	})
+	.catch(err => {
+		reject(err);
+	})
+}
+
+function newZKill(input) {
 }
 
 function displaySignatures(system) {
