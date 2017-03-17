@@ -36,7 +36,7 @@ document.onkeyup = function(e) {
 		displayTrackingPopUp(tracking);
 	}
 	if (e.keyCode == 8) {
-		goTo('index');
+		goTo('region');
 	}
 }
 
