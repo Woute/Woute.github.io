@@ -8,7 +8,7 @@ function goTo(page, system) {
 		localStorage.setItem('system', system);
 	}
 	if (page == 'region') {
-		page = localStorage.getItem('system').split('/')[0];
+		page = '/' + localStorage.getItem('system').split('/')[0];
 	}
 	window.location.href = page + '.html';
 }
