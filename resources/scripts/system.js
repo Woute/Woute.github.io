@@ -114,9 +114,7 @@ function makeCombat(sigId, system) {
 
 function checkResults(system) {
 	signatures = JSON.parse(localStorage.getItem("cache_" + system));
-	if (signatures !== "undefined" && signatures !== null) {
-		displaySignatures(system);
-	}
+	displaySignatures(system);
 }
 
 function newPScan(input, system) {
