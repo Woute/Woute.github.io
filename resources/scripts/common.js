@@ -1,51 +1,51 @@
 'use strict';
 
-window.onload = function() {
-	setInterval(getLocation, 5000);
-}
-
-function goTo(page) {
+function goTo(page, system) {
 	if (typeof page == 'undefined' || page == '' || page == null) {
 		return false;
+	}
+	if (typeof system != 'undefined' && system != null && system != '') {
+		localStorage.setItem('system', system);
+	}
+	if (page == 'region') {
+		page = localStorage.getItem('system').split('/')[0];
 	}
 	window.location.href = page + '.html';
 }
 
 function getLocation() {
-	let characterID = localStorage.getItem('characterID');
-	if (typeof characterID == 'undefined' || characterID == '' || characterID == null) {
-		return false;
-	}
-    let address = 'https://crest-tq.eveonline.com/characters/' + characterID.toString() + '/location/';
-    let system = '';
-	httpRequest('GET', address, true)
-	.then(response => {
-		let result = JSON.parse(response);
-		system = result.solarSystem.name;
-		return httpRequest('GET', result.solarSystem.href, false);
-	})
-	.then(response => {
-		let result = JSON.parse(response);
-		return httpRequest('GET', result.constellation.href, false);
-	})
-	.then(response => {
-		let result = JSON.parse(response);
-		return httpRequest('GET', result.region.href, false);
-	})
-	.then(response => {
-		let result = JSON.parse(response);
-		let location = '/' + result.name + '/' + system;
-		console.log('Current location : ' + location);
-		localStorage.setItem('location', location);
-		let tracking = localStorage.getItem('tracking');
-		if (typeof displayTrackingPopUp === 'function' && (tracking == 'enabled' || tracking == null) && window.location.pathname != location + '.html') {
-			goTo(location);
+	return new Promise(function(resolve, reject) {
+		let characterID = localStorage.getItem('characterID');
+		if (typeof characterID == 'undefined' || characterID == '' || characterID == null) {
+			return false;
 		}
-		return true;
-	})
-	.catch(err => {
-		console.log(err);
-	})
+		let address = 'https://crest-tq.eveonline.com/characters/' + characterID.toString() + '/location/';
+		let system = '';
+		httpRequest('GET', address, true)
+		.then(response => {
+			let result = JSON.parse(response);
+			system = result.solarSystem.name;
+			return httpRequest('GET', result.solarSystem.href, false);
+		})
+		.then(response => {
+			let result = JSON.parse(response);
+			return httpRequest('GET', result.constellation.href, false);
+		})
+		.then(response => {
+			let result = JSON.parse(response);
+			return httpRequest('GET', result.region.href, false);
+		})
+		.then(response => {
+			let result = JSON.parse(response);
+			let location = result.name + '/' + system;
+			console.log('Current location : ' + location);
+			localStorage.setItem('location', location);
+			resolve(location);
+		})
+		.catch(err => {
+			reject(err);
+		});
+	});
 }
 
 function httpRequest(method, url, auth, data, headers) {

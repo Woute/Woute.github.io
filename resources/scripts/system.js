@@ -2,7 +2,23 @@
 let cache = {};
 let signatures = {};
 
-
+window.onload = function() {
+	changeSystem();
+	setInterval(function() {
+		getLocation()
+		.then(location => {
+			let tracking = localStorage.getItem('tracking');
+			let system = localStorage.getItem('system');
+			if ((tracking == 'enabled' || tracking == null) && system != location) {
+				localStorage.setItem('system', location);
+				changeSystem();
+			}
+		})
+		.catch(err => {
+			console.log(err);
+		})
+	}, 5000);
+}
 
 document.onkeyup = function(e) {
 	if (e.ctrlKey && e.keyCode == 90) {
@@ -34,6 +50,15 @@ document.onpaste = function(e) {
 	newPScan(pastedText, document.title);
 	return false; // Prevent the default handler from running.
 };
+
+function changeSystem() {
+	let tmp = localStorage.getItem('system').split('/');
+	let region = tmp[0];
+	let system = tmp[1];
+	document.title = system;
+	document.getElementById('systemName').innerHTML = system;
+	checkResults(system);
+}
 
 function displayTrackingPopUp(tracking) {
 	let body = document.body;

@@ -1,5 +1,9 @@
 'use strict';
 
+window.onload = function() {
+	setInterval(getLocation, 5000);
+}
+
 document.onkeyup = function(e) {
 	if (e.keyCode == 32) {
 		goTo(localStorage.getItem("location"));
