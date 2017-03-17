@@ -141,6 +141,9 @@ function newCScan(input) {
 	.then(response => {
 		console.log(response);
 		let iframe = document.getElementById('iframe');
+		while (iframe.firstChild) {
+			iframe.removeChild(iframe.firstChild);
+		}
 		let CScanResults = document.createElement('iframe');
 		CScanResults.style.width = '100%';
 		CScanResults.style.height = '100%';
