@@ -2,6 +2,8 @@
 let cache = {};
 let signatures = {};
 
+
+
 document.onkeyup = function(e) {
 	if (e.ctrlKey && e.keyCode == 90) {
 		ctrlZ(document.title);
@@ -21,6 +23,17 @@ document.onkeyup = function(e) {
 		goTo('index');
 	}
 }
+
+document.onpaste = function(e) {
+	let pastedText = '';
+	if (window.clipboardData && window.clipboardData.getData) { // IE
+		pastedText = window.clipboardData.getData('Text');
+	} else if (e.clipboardData && e.clipboardData.getData) {
+		pastedText = e.clipboardData.getData('text/plain');
+	}
+	alert(pastedText); // Process and handle text...
+	return false; // Prevent the default handler from running.
+};
 
 function displayTrackingPopUp(tracking) {
 	let body = document.body;

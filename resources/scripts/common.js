@@ -1,11 +1,7 @@
 'use strict';
 
 window.onload = function() {
-	console.log('Window loaded');
 	setInterval(getLocation, 5000);
-	if (typeof checkResults === 'function') {
-		checkResults(document.title);
-	}
 }
 
 function goTo(page) {

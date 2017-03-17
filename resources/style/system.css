@@ -24,7 +24,7 @@ body, html {
 	top: -100px;
 	height: 100px;
 	width: 30%;
-	left: 35%;
+	left: 0;
 	text-align: center;
 	line-height: 90px;
 	font-size: 40px;
@@ -56,38 +56,19 @@ body, html {
 
 #main {
 	position: absolute;
-	top: 15%;
-	left: 10%;
-	height: 70%;
-	width: 80%;
-	opacity: 0.7;
-}
-
-#scanReader {
-	position: absolute;
 	top: 0;
 	left: 0;
 	height: 100%;
-	width: 30%;
+	width: 100%;
+	opacity: 0.7;
 }
-
-	#reader {
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		resize: none;
-		opacity: 0.8;
-		background: #CCCCCC;
-	}
 
 #scanResults {
 	position: absolute;
 	top: 0;
 	right: 0;
-	height: 100%;
-	width: 70%;
+	height: 85%;
+	width: 50%;
 	background: #444444;
 }
 	#results {
