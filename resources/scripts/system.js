@@ -23,14 +23,15 @@ document.onkeyup = function(e) {
 }
 
 function displayTrackingPopUp(tracking) {
-	var Tracking = document.getElementById('Tracking');
-	Tracking.addEventListener('webkitAnimationEnd', function() {
-		Tracking.style.webkitAnimationPlayState = 'paused';
-	});
-	Tracking.classList.add('animation-reset');
-	void Tracking.offsetWidth;
-	Tracking.classList.remove('animation-reset');
-	var TrackingText = document.getElementById('TrackingText');
+	let body = document.body;
+	let Tracking = document.getElementById('Tracking');
+	body.removeChild(Tracking);
+	Tracking = document.createElement('div');
+	Tracking.id = 'Tracking';
+	let TrackingText = document.createElement('p');
+	TrackingText.id = 'TrackingText';
+	Tracking.appendChild(TrackingText);
+	body.appendChild(Tracking);
 	TrackingText.innerHTML = 'Tracking ' + tracking;
 	Tracking.style.MozAnimationName = 'TrackingPopUp';
 	Tracking.style.MozAnimationDuration = '4s';
