@@ -142,6 +142,8 @@ function newCScan(input) {
 		console.log(response);
 		let iframe = document.getElementById('iframe');
 		let CScanResults = document.createElement('iframe');
+		CScanResults.style.width = '100%';
+		CScanResults.style.height = '100%';
 		iframe.appendChild(CScanResults);
 		CScanResults.contentWindow.document.open();
 		CScanResults.contentWindow.document.write(response);
