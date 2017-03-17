@@ -136,7 +136,15 @@ function newCScan(input) {
 	let url = 'https://evescanner-gatekeeper.herokuapp.com/evepraisal';
 	httpRequest('POST', url, false, JSON.stringify(data), {'Content-Type': 'application/json'})
 	.then(response => {
-		console.log(response);
+		let iframe = document.getElementById('iframe');
+		while (iframe.firstChild) {
+			iframe.removeChild(iframe.firstChild);
+		}
+		let evepraisalFrame = document.createElement('IFRAME');
+		evepraisalFrame.id = 'evepraisalFrame';
+		evepraisalFrame.innerHTML = response;
+		iframe.appendChild(evepraisalFrame);
+		iframe.style.display = 'inline-block';
 	})
 	.catch(err => {
 		reject(err);
