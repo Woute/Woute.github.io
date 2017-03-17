@@ -141,7 +141,11 @@ function newCScan(input) {
 	.then(response => {
 		console.log(response);
 		let iframe = document.getElementById('iframe');
-		iframe.innerHTML = response;
+		let CScanResults = document.createElement('iframe');
+		iframe.appendChild(CScanResults);
+		CScanResults.contentWindow.document.open();
+		CScanResults.contentWindow.document.write(response);
+		CScanResults.contentWindow.document.close();
 		iframe.style.display = 'inline-block';
 	})
 	.catch(err => {
