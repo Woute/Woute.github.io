@@ -144,10 +144,9 @@ function newCScan(input) {
 		let CScanResults = document.createElement('iframe');
 		CScanResults.style.width = '100%';
 		CScanResults.style.height = '100%';
-		CScanResults.style.overflow = 'hidden';
 		iframe.appendChild(CScanResults);
 		CScanResults.contentWindow.document.open();
-		CScanResults.contentWindow.document.write(response);
+		CScanResults.contentWindow.document.write('<div style="overflow: hidden">' + response '</div>');
 		CScanResults.contentWindow.document.close();
 		iframe.style.display = 'inline-block';
 	})
