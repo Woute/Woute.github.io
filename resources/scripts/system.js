@@ -151,8 +151,8 @@ function newCScan(input) {
 		let d = (CScanResults.contentWindow || CScanResults.contentDocument);
 		if (d.document) d = d.document;
 		d.open();
-		d.body.style.overflow = 'hidden';
 		d.write(response);
+		d.body.style.overflow = 'hidden';
 		d.close();
 		iframe.style.display = 'inline-block';
 	})
