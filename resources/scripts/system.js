@@ -21,10 +21,10 @@ window.onload = function() {
 }
 
 document.onkeyup = function(e) {
-	if (e.ctrlKey && e.keyCode == 90) {
+	if (e.ctrlKey && e.keyCode == 90) { // Ctrl + Z
 		ctrlZ(document.title);
 	}
-	if (e.keyCode == 32) {
+	if (e.keyCode == 32) { // Space
 		let tracking = localStorage.getItem('tracking');
 		if (tracking == null || tracking == 'enabled') {
 			tracking = 'disabled';
@@ -35,10 +35,11 @@ document.onkeyup = function(e) {
 		}
 		displayTrackingPopUp(tracking);
 	}
-	if (e.keyCode == 8) {
-		goTo('region');
+	if (e.keyCode == 8) { // Backspace
+		let system = JSON.parse(localStorage.getItem('system'));
+		goTo(system.region + '.html?sys=' + system.id);
 	}
-	if (e.keyCode == 27) {
+	if (e.keyCode == 27) { // Escape
 		document.getElementById('iframe').style.display = 'none';
 	}
 }
