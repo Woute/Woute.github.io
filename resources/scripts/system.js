@@ -63,7 +63,11 @@ document.onpaste = function(e) {
 function changeSystem() {
 	let system = JSON.parse(localStorage.getItem('system'));
 	document.title = system.name;
-	document.getElementById('systemName').innerHTML = system.name;
+	let systemName = document.getElementById('systemName')
+	systemName.innerHTML = system.name;
+	systemName.onclick = function() {
+		goTo(system.region + '.html?sys=' + system.id);
+	};
 	history.pushState({}, system.name, '/system.html?location=' + system.region + '/' + system.name + '/' + system.id);
 	checkResults(system.name);
 }
