@@ -41,8 +41,10 @@ function getLocation() {
 		let location = {};
 		httpRequest('GET', address, true)
 		.then(response => {
-			console.log(response);
 			let result = JSON.parse(response);
+			if (typeof result.solarSystem == 'undefined') {
+				return reject();
+			}
 			location['name'] = result.solarSystem.name;
 			location['id'] = result.solarSystem.id;
 			return httpRequest('GET', result.solarSystem.href, false);
@@ -60,10 +62,10 @@ function getLocation() {
 			location['region'] = result.name;
 			console.log('Current location : ' + location);
 			localStorage.setItem('location', JSON.stringify(location));
-			resolve(location);
+			return resolve(location);
 		})
 		.catch(err => {
-			reject(err);
+			return reject(err);
 		});
 	});
 }
@@ -75,7 +77,7 @@ function httpRequest(method, url, auth, data, headers) {
 		xhr.open(method, url);
 		xhr.onload = function () {
 			if (this.status >= 200 && this.status < 300) {
-				resolve(xhr.response);
+				return resolve(xhr.response);
 			} else if (refresh && auth && this.status == 401) {
 				let refreshUrl = 'https://evescanner-gatekeeper.herokuapp.com/refresh';
 				let refreshData = {
@@ -94,10 +96,10 @@ function httpRequest(method, url, auth, data, headers) {
 					xhr.send(data);
 				})
 				.catch(err => {
-					reject(err);
+					return reject(err);
 				})
 			} else {
-				reject({
+				return reject({
 					status: this.status,
 					statusText: xhr.statusText
 				});
@@ -113,7 +115,7 @@ function httpRequest(method, url, auth, data, headers) {
 			xhr.setRequestHeader('Authorization', 'Bearer ' + token);
 		}
 		xhr.onerror = function () {
-			reject({
+			return reject({
 				status: this.status,
 				statusText: xhr.statusText
 			});
