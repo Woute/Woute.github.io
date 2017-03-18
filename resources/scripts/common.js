@@ -41,6 +41,7 @@ function getLocation() {
 		let location = {};
 		httpRequest('GET', address, true)
 		.then(response => {
+			console.log(response);
 			let result = JSON.parse(response);
 			location['name'] = result.solarSystem.name;
 			location['id'] = result.solarSystem.id;
