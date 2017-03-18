@@ -62,7 +62,11 @@ function getLocation() {
 			return resolve(location);
 		})
 		.catch(err => {
-			return reject(err);
+			if (err.message === 'Cannot read property \'name\' of undefined') {
+				console.log('No current location');
+			} else {
+				return reject(err);
+			}
 		});
 	});
 }
