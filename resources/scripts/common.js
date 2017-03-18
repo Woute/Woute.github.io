@@ -42,9 +42,6 @@ function getLocation() {
 		httpRequest('GET', address, true)
 		.then(response => {
 			let result = JSON.parse(response);
-			if (typeof result.solarSystem == 'undefined') {
-				return reject();
-			}
 			location['name'] = result.solarSystem.name;
 			location['id'] = result.solarSystem.id;
 			return httpRequest('GET', result.solarSystem.href, false);
@@ -123,4 +120,3 @@ function httpRequest(method, url, auth, data, headers) {
 		xhr.send(data);
 	});
 }
-
