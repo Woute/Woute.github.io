@@ -30,5 +30,6 @@ function setDestination(e, id) {
 
 function highlightSystem(sysId) {
 	let sys = document.getElementById('rect' + sysId);
-	console.log(sys.style);
+	sys.style.stroke = '#FFFFFF';
+	sys.style.strokeWidth = '3';
 }
