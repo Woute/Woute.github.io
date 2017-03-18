@@ -42,8 +42,8 @@ function getLocation() {
 		httpRequest('GET', address, true)
 		.then(response => {
 			let result = JSON.parse(response);
-			location.name = result.solarSystem.name;
-			location.id = result.solarSystem.id;
+			location['name'] = result.solarSystem.name;
+			location['id'] = result.solarSystem.id;
 			return httpRequest('GET', result.solarSystem.href, false);
 		})
 		.then(response => {
@@ -56,7 +56,7 @@ function getLocation() {
 		})
 		.then(response => {
 			let result = JSON.parse(response);
-			location.region = result.name;
+			location['region'] = result.name;
 			console.log('Current location : ' + location);
 			localStorage.setItem('location', JSON.stringify(location));
 			resolve(location);

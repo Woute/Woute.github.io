@@ -2,7 +2,7 @@
 
 window.onload = function() {
 	setInterval(getLocation, 5000);
-	if (window.location.href.match('?') && typeof highlightSystem === 'function') {
+	if (window.location.href.match('\?') && typeof highlightSystem === 'function') {
 		highlightSystem(getParameterByName('sys'));
 	}
 }
