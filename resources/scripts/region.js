@@ -20,9 +20,6 @@ function setDestination(e, id) {
 		}
 	}
 	httpRequest('POST', address, true, JSON.stringify(data))
-	.then(response => {
-		console.log(response);
-	})
 	.catch(err => {
 		console.log(err);
 	})
