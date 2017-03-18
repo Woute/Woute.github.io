@@ -1,13 +1,13 @@
 'use strict';
 
-function setDestination(e, id) {  
+function setDestination(id) {  
     let characterID = localStorage.getItem('characterID');
     let clearOtherWaypoints = false;
     let first = false;
-    if (e.shiftKey) {
+    if (event.shiftKey) {
 		first = true;
 	}
-	if (e.ctrlKey) {
+	if (event.ctrlKey) {
 		clearOtherWaypoints = true;
 	}
     let address = 'https://crest-tq.eveonline.com/characters/' + characterID.toString() + '/ui/autopilot/waypoints/';
