@@ -29,7 +29,4 @@ function highlightSystem(sysId) {
 	let sys = document.getElementById('rect' + sysId);
 	sys.style.stroke = '#FFFFFF';
 	sys.style.strokeWidth = '3';
-	let href = window.location.href;
-	href = href.substring(0, href.indexOf('?'));
-	history.pushState({}, document.title, href);
 }
