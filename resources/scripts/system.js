@@ -8,9 +8,9 @@ window.onload = function() {
 		getLocation()
 		.then(location => {
 			let tracking = localStorage.getItem('tracking');
-			let system = localStorage.getItem('system');
-			if ((tracking == 'enabled' || tracking == null) && system != location) {
-				localStorage.setItem('system', location);
+			let system = JSON.parse(localStorage.getItem('system'));
+			if ((tracking == 'enabled' || tracking == null) && system.id != location.id) {
+				localStorage.setItem('system', JSON.stringify(location));
 				changeSystem();
 			}
 		})
@@ -61,13 +61,11 @@ document.onpaste = function(e) {
 };
 
 function changeSystem() {
-	let tmp = localStorage.getItem('system').split('/');
-	let region = tmp[0];
-	let system = tmp[1];
-	document.title = system;
-	document.getElementById('systemName').innerHTML = system;
-	history.pushState({}, system, '/system.html?location=' + region + '/' + system);
-	checkResults(system);
+	let system = JSON.parse(localStorage.getItem('system'));
+	document.title = system.name;
+	document.getElementById('systemName').innerHTML = system.name;
+	history.pushState({}, system.name, '/system.html?location=' + system.region + '/' + system.name + '/' + system.id);
+	checkResults(system.name);
 }
 
 function displayTrackingPopUp(tracking) {

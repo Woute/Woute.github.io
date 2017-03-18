@@ -5,12 +5,30 @@ function goTo(page, system) {
 		return false;
 	}
 	if (typeof system != 'undefined' && system != null && system != '') {
-		localStorage.setItem('system', system);
+		let data = {
+			'region': system.split('/')[0],
+			'name': system.split('/')[1],
+			'id': system.split('/')[2]
+		}
+		localStorage.setItem('system', JSON.stringify(data));
 	}
 	if (page == 'region') {
-		page = '/' + localStorage.getItem('system').split('/')[0];
+		let region = JSON.parse(localStorage.getItem('system')).region;
+		page = '/' + region + '.html';
 	}
-	window.location.href = page + '.html';
+	window.location.href = page;
+}
+
+function getParameterByName(name, url) {
+	if (!url) {
+		url = window.location.href;
+	}
+	name = name.replace(/[\[\]]/g, "\\$&");
+	let regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)");
+	let results = regex.exec(url);
+	if (!results) return null;
+	if (!results[2]) return '';
+	return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 
 function getLocation() {
@@ -20,11 +38,12 @@ function getLocation() {
 			return false;
 		}
 		let address = 'https://crest-tq.eveonline.com/characters/' + characterID.toString() + '/location/';
-		let system = '';
+		let location = {};
 		httpRequest('GET', address, true)
 		.then(response => {
 			let result = JSON.parse(response);
-			system = result.solarSystem.name;
+			location.name = result.solarSystem.name;
+			location.id = result.solarSystem.id;
 			return httpRequest('GET', result.solarSystem.href, false);
 		})
 		.then(response => {
@@ -37,9 +56,9 @@ function getLocation() {
 		})
 		.then(response => {
 			let result = JSON.parse(response);
-			let location = result.name + '/' + system;
+			location.region = result.name;
 			console.log('Current location : ' + location);
-			localStorage.setItem('location', location);
+			localStorage.setItem('location', JSON.stringify(location));
 			resolve(location);
 		})
 		.catch(err => {

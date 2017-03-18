@@ -2,15 +2,19 @@
 
 window.onload = function() {
 	setInterval(getLocation, 5000);
+	if (window.location.href.match('?') && typeof highlightSystem === 'function') {
+		highlightSystem(getParameterByName('sys'));
+	}
 }
 
 document.onkeyup = function(e) {
-	if (e.keyCode == 32) {
-		goTo('system', localStorage.getItem('location'));
+	if (e.keyCode == 32) { // Space
+		let location = JSON.parse(localStorage.getItem('location'));
+		goTo('system.html', location.region + '/' + location.name + '/' + location.id);
 	}
-	if (e.keyCode == 8) {
+	if (e.keyCode == 8) { // Backspace
 		if (document.title != 'New Eden') {
-			goTo('/index');
+			goTo('/index.html');
 		}
 	}
 }
