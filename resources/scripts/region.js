@@ -36,7 +36,7 @@ function showJumps() {
 	httpRequest('GET', 'https://api.eveonline.com/map/Jumps.xml.aspx')
 	.then(response => {
 		for (let i = 0 ; i < texts.length ; ++i) {
-			let sysId = texts.id.substring(3);
+			let sysId = texts[i].id.substring(3);
 			let regex = new RegExp('<row solarSystemID="' + sysId + '" shipJumps="(\d+)"/>');
 			texts[i].innerHTML = regex.exec(response)[1] || '0';
 		}
