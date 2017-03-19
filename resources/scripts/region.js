@@ -32,9 +32,11 @@ function highlightSystem(sysId) {
 }
 
 function showJumps() {
+	return false;
 	let texts = document.getElementsByClassName('st');
 	httpRequest('GET', 'https://api.eveonline.com/map/Jumps.xml.aspx')
 	.then(response => {
+		console.log(response);
 		for (let i = 0 ; i < texts.length ; ++i) {
 			let sysId = texts[i].id.substring(3);
 			let regex = new RegExp('<row solarSystemID="' + sysId + '" shipJumps="(\d+)"/>');
