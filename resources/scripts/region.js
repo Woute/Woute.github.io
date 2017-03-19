@@ -36,11 +36,23 @@ function showJumps() {
 	let texts = document.getElementsByClassName('st');
 	httpRequest('GET', 'https://api.eveonline.com/map/Jumps.xml.aspx')
 	.then(response => {
-		console.log(response);
-		for (let i = 0 ; i < texts.length ; ++i) {
+		let xmlDoc = null;
+		if (window.DOMParser)
+		{
+			parser = new DOMParser();
+			xmlDoc = parser.parseFromString(txt, "text/xml");
+		}
+		else // Internet Explorer
+		{
+			xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+			xmlDoc.async = false;
+			xmlDoc.loadXML(txt);
+		}
+		for (let i = 1 ; i < texts.length ; ++i) {
 			let sysId = texts[i].id.substring(3);
-			let regex = new RegExp('<row solarSystemID="' + sysId + '" shipJumps="(\d+)"/>');
-			texts[i].innerHTML = regex.exec(response)[1] || '0';
+			let row = document.querySelector('[solarSystemID="' + sysId + '"]');
+			let jumps = row.selectAttribute('shipJumps');
+			console.log(row);
 		}
 	})
 	.catch(err => {
