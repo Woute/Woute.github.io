@@ -178,7 +178,7 @@ function newZKill(input) {
 	let d = (zKillboard.contentWindow || zKillboard.contentDocument);
 	if (d.document) d = d.document;
 	d.open();
-	d.write();
+	d.write('<style type="text/css">::-webkit-scrollbar { display: none; }</style>');
 	d.onkeyup = keys;
 	d.close();
 	iframe.style.display = 'inline-block';
