@@ -38,7 +38,7 @@ function showJumps() {
 		for (let i = 0 ; i < texts.length ; ++i) {
 			let sysId = texts.id.substring(3);
 			let regex = new RegExp('<row solarSystemID="' + sysId + '" shipJumps="(\d+)"/>');
-			let texts[i].innerHTML = response.exec(regex)[1];
+			let texts[i].innerHTML = regex.exec(response)[1];
 		}
 	})
 	.catch(err => {
