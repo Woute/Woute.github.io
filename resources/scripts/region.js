@@ -30,3 +30,18 @@ function highlightSystem(sysId) {
 	sys.style.stroke = '#FFFFFF';
 	sys.style.strokeWidth = '3';
 }
+
+function showJumps() {
+	let texts = document.getElementsByClassName('st');
+	httpRequest('GET', 'https://api.eveonline.com/map/Jumps.xml.aspx')
+	.then(response => {
+		for (let i = 0 ; i < texts.length ; ++i) {
+			let sysId = texts.id.substring(3);
+			let regex = new RegExp('<row solarSystemID="' + sysId + '" shipJumps="(\d+)"/>');
+			let texts[i].innerHTML = response.exec(regex)[1];
+		}
+	})
+	.catch(err => {
+		console.log(err);
+	})
+}
