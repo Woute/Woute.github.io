@@ -20,30 +20,6 @@ window.onload = function() {
 	}, 5000);
 }
 
-document.onkeyup = function(e) {
-	if (e.ctrlKey && e.keyCode == 90) { // Ctrl + Z
-		ctrlZ(document.title);
-	}
-	if (e.keyCode == 32) { // Space
-		let tracking = localStorage.getItem('tracking');
-		if (tracking == null || tracking == 'enabled') {
-			tracking = 'disabled';
-			localStorage.setItem('tracking', tracking);
-		} else {
-			tracking = 'enabled';
-			localStorage.setItem('tracking', tracking);
-		}
-		displayTrackingPopUp(tracking);
-	}
-	if (e.keyCode == 8) { // Backspace
-		let system = JSON.parse(localStorage.getItem('system'));
-		goTo(system.region + '.html?sys=' + system.id);
-	}
-	if (e.keyCode == 27) { // Escape
-		document.getElementById('iframe').style.display = 'none';
-	}
-}
-
 document.onpaste = function(e) {
 	let pastedText = '';
 	if (window.clipboardData && window.clipboardData.getData) { // IE
@@ -60,6 +36,33 @@ document.onpaste = function(e) {
 	}
 	return false; // Prevent the default handler from running.
 };
+
+document.onkeyup = keys;
+
+function keys() {
+	if (event.ctrlKey && event.keyCode == 90) { // Ctrl + Z
+		ctrlZ(document.title);
+	}
+	if (event.keyCode == 32) { // Space
+		let tracking = localStorage.getItem('tracking');
+		if (tracking == null || tracking == 'enabled') {
+			tracking = 'disabled';
+			localStorage.setItem('tracking', tracking);
+		} else {
+			tracking = 'enabled';
+			localStorage.setItem('tracking', tracking);
+		}
+		displayTrackingPopUp(tracking);
+	}
+	if (event.keyCode == 8) { // Backspace
+		let system = JSON.parse(localStorage.getItem('system'));
+		goTo(system.region + '.html?sys=' + system.id);
+	}
+	if (event.keyCode == 27) { // Escape
+		let iframe = document.getElementById('iframe') || window.parent.document.getElementById('iframe');
+		iframe.style.display = 'none';
+	}
+}
 
 function changeSystem() {
 	let system = JSON.parse(localStorage.getItem('system'));
@@ -154,6 +157,7 @@ function newCScan(input) {
 		d.open();
 		d.write(response);
 		d.body.style.overflow = 'hidden';
+		d.onkeyup = keys;
 		d.close();
 		iframe.style.display = 'inline-block';
 	})
@@ -163,6 +167,22 @@ function newCScan(input) {
 }
 
 function newZKill(input) {
+	let iframe = document.getElementById('iframe');
+	while (iframe.firstChild) {
+		iframe.removeChild(iframe.firstChild);
+	}
+	let zKillboard = document.createElement('iframe');
+	zKillboard.style.width = '100%';
+	zKillboard.style.height = '100%';
+	zKillboard.src = 'https://zkillboard.com/search/' + input + '/';
+	iframe.appendChild(zKillboard);
+	let d = (zKillboard.contentWindow || zKillboard.contentDocument);
+	if (d.document) d = d.document;
+	d.open();
+	d.write();
+	d.onkeyup = keys;
+	d.close();
+	iframe.style.display = 'inline-block';
 }
 
 function displaySignatures(system) {
