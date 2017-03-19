@@ -172,9 +172,9 @@ function newZKill(input) {
 		iframe.removeChild(iframe.firstChild);
 	}
 	let zKillboard = document.createElement('iframe');
+	zKillboard.src = 'https://zkillboard.com/search/' + input + '/';
 	zKillboard.style.width = '100%';
 	zKillboard.style.height = '100%';
-	zKillboard.src = 'https://zkillboard.com/search/' + input + '/';
 	iframe.appendChild(zKillboard);
 	let d = (zKillboard.contentWindow || zKillboard.contentDocument);
 	if (d.document) d = d.document;
