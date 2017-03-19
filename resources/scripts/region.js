@@ -32,27 +32,51 @@ function highlightSystem(sysId) {
 }
 
 function showJumps() {
-	return false;
 	let texts = document.getElementsByClassName('st');
 	httpRequest('GET', 'https://api.eveonline.com/map/Jumps.xml.aspx')
 	.then(response => {
 		let xmlDoc = null;
 		if (window.DOMParser)
 		{
-			parser = new DOMParser();
-			xmlDoc = parser.parseFromString(txt, "text/xml");
+			let parser = new DOMParser();
+			xmlDoc = parser.parseFromString(response, "text/xml");
 		}
 		else // Internet Explorer
 		{
 			xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
 			xmlDoc.async = false;
-			xmlDoc.loadXML(txt);
+			xmlDoc.loadXML(response);
 		}
 		for (let i = 1 ; i < texts.length ; ++i) {
 			let sysId = texts[i].id.substring(3);
-			let row = document.querySelector('[solarSystemID="' + sysId + '"]');
-			let jumps = row.selectAttribute('shipJumps');
-			console.log(row);
+			let row = xmlDoc.querySelector('[solarSystemID="' + sysId + '"]');
+			let jumps = '0'
+			if (row != null) jumps = row.getAttribute('shipJumps');
+			texts[i].innerHTML = jumps;
+			texts[i].classList.remove('so');
+			let color = '#000000';
+			switch (true) {
+				case (jumps < 20):
+					color = '#000000';
+					break;
+				case (jumps < 50):
+					color = '#006600';
+					break;
+				case (jumps < 80):
+					color = '#669933';
+					break;
+				case (jumps < 120):
+					color = '#999900';
+					break;
+				case (jumps < 200):
+					color = '#CC9900';
+					break;
+				default:
+					color = '#990000';
+					break;
+			}
+			let rect = document.querySelector('#rect' + sysId);
+			rect.style.fill = color;
 		}
 	})
 	.catch(err => {
