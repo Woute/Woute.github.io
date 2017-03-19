@@ -172,7 +172,6 @@ function newZKill(input) {
 		iframe.removeChild(iframe.firstChild);
 	}
 	let zKillboard = document.createElement('iframe');
-	zKillboard.src = 'https://zkillboard.com/search/' + input + '/';
 	zKillboard.style.width = '100%';
 	zKillboard.style.height = '100%';
 	iframe.appendChild(zKillboard);
@@ -183,6 +182,7 @@ function newZKill(input) {
 	d.onkeyup = keys;
 	d.close();
 	iframe.style.display = 'inline-block';
+	zKillboard.src = 'https://zkillboard.com/search/' + input + '/';
 }
 
 function displaySignatures(system) {
