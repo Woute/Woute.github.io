@@ -60,7 +60,9 @@ function keys() {
 	}
 	if (event.keyCode == 27) { // Escape
 		let iframe = document.getElementById('iframe') || window.parent.document.getElementById('iframe');
-		iframe.style.display = 'none';
+		while (iframe.firstChild) {
+			iframe.removeChild(iframe.firstChild);
+		}
 	}
 }
 
