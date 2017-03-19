@@ -5,6 +5,9 @@ window.onload = function() {
 	if (window.location.href.indexOf('?') != -1 && typeof highlightSystem === 'function') {
 		highlightSystem(getParameterByName('sys'));
 	}
+	if (typeof showJumps === 'function') {
+		showJumps();
+	}
 }
 
 document.onkeyup = function(e) {
