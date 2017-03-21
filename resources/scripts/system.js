@@ -176,6 +176,7 @@ function newZKill(input) {
 	let zKillboard = document.createElement('iframe');
 	zKillboard.style.width = '100%';
 	zKillboard.style.height = '100%';
+	zKillboard.sandbox = '';
 	iframe.appendChild(zKillboard);
 	let d = (zKillboard.contentWindow || zKillboard.contentDocument);
 	if (d.document) d = d.document;
