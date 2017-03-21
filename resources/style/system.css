@@ -56,10 +56,6 @@ body, html {
 	overflow: hidden;
 }
 
-::-webkit-scrollbar {
-	display: none;
-}
-
 #scanResults {
 	position: absolute;
 	top: 0;

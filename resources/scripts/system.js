@@ -159,7 +159,7 @@ function newCScan(input) {
 		d.open();
 		d.write(response);
 		d.body.style.overflow = 'hidden';
-		d.onkeyup = keys;
+		d.onkeyup = window.parent.keys;
 		d.close();
 		iframe.style.display = 'inline-block';
 	})
@@ -180,8 +180,7 @@ function newZKill(input) {
 	let d = (zKillboard.contentWindow || zKillboard.contentDocument);
 	if (d.document) d = d.document;
 	d.open();
-	d.write('<style type="text/css">::-webkit-scrollbar { display: none; }</style>');
-	d.onkeyup = keys;
+	d.onkeyup = window.parent.keys;
 	d.close();
 	iframe.style.display = 'inline-block';
 	zKillboard.src = 'https://zkillboard.com/search/' + input + '/';
