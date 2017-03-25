@@ -56,7 +56,7 @@ function getLocation() {
 		})
 		.then(response => {
 			let result = JSON.parse(response);
-			location['region'] = result.name;
+			location['region'] = result.name.replace(' ', '_');
 			console.log('Current location : ' + location.region + '/' + location.name + '/' + location.id);
 			localStorage.setItem('location', JSON.stringify(location));
 			return resolve(location);
