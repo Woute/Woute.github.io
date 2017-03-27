@@ -83,3 +83,62 @@ function showJumps() {
 		console.log(err);
 	})
 }
+
+function showKills() {
+	let texts = document.getElementsByClassName('st');
+	httpRequest('GET', 'https://api.eveonline.com/map/Kills.xml.aspx')
+	.then(response => {
+		let xmlDoc = null;
+		if (window.DOMParser)
+		{
+			let parser = new DOMParser();
+			xmlDoc = parser.parseFromString(response, "text/xml");
+		}
+		else // Internet Explorer
+		{
+			xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+			xmlDoc.async = false;
+			xmlDoc.loadXML(response);
+		}
+		for (let i = 1 ; i < texts.length ; ++i) {
+			let sysId = texts[i].id.substring(3);
+			let row = xmlDoc.querySelector('[solarSystemID="' + sysId + '"]');
+			let shipKills = '0';
+			let podKills = '0';
+			let factionKills = '0';
+			if (row != null) {
+				shipKills = row.getAttribute('shipKills');
+				podKills = row.getAttribute('podKills');
+				factionKills = row.getAttribute('factionKills');
+			}
+			texts[i].innerHTML = shipKills + ' / ' + podKills + ' (' + factionKills + ')';
+			texts[i].classList.remove('so');
+			let color = '#000000';
+			switch (true) {
+				case (shipKills < 5):
+					color = '#000000';
+					break;
+				case (shipKills < 10):
+					color = '#006600';
+					break;
+				case (shipKills < 20):
+					color = '#669933';
+					break;
+				case (shipKills < 50):
+					color = '#999900';
+					break;
+				case (shipKills < 100):
+					color = '#CC9900';
+					break;
+				default:
+					color = '#990000';
+					break;
+			}
+			let rect = document.querySelector('#rect' + sysId);
+			rect.style.fill = color;
+		}
+	})
+	.catch(err => {
+		console.log(err);
+	})
+}
