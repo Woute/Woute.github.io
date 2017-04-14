@@ -17,6 +17,10 @@
 	<input id="secret" type="text" placeholder="Your secret" /><br />
 	<button id="readCredentials" type="button" onclick="readCredentials();">Save</button>
 </div>
+<select id="selectShow" onchange="selectShow();">
+	<option value="Jumps">Jumps</option>
+	<option value="Kills">Kills</option>
+</select>
 
 <?xml version="1.0"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -146,7 +150,7 @@
 <defs>
   <symbol id="def30004999">
     <a xlink:href="javascript:goTo('system.html', 'Essence/Ladistier/30004999');" class="sys link-5-30004999" target="_top">
-      <rect id="rect30004999" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-20);" />
+      <rect id="rect30004999" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-0);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Ladistier</text>
       <text id="txt30004999" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -212,7 +216,7 @@
   </symbol>
   <symbol id="def30004997">
     <a xlink:href="javascript:goTo('system.html', 'Essence/Vifrevaert/30004997');" class="sys link-5-30004997" target="_top">
-      <rect id="rect30004997" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-40);" />
+      <rect id="rect30004997" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-20);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Vifrevaert</text>
       <text id="txt30004997" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -544,7 +548,7 @@
   <symbol id="def30004982">
     <a xlink:href="javascript:goTo('system.html', 'Essence/Indregulle/30004982');" class="sys link-5-30004982" target="_top">
     <rect id="ice30004982" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
-      <rect id="rect30004982" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-20);" />
+      <rect id="rect30004982" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-0);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Indregulle</text>
       <text id="txt30004982" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -588,7 +592,7 @@
   </symbol>
   <symbol id="def30004984">
     <a xlink:href="javascript:goTo('system.html', 'Essence/Abune/30004984');" class="sys link-5-30004984" target="_top">
-      <rect id="rect30004984" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-40);" />
+      <rect id="rect30004984" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-0);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Abune</text>
       <text id="txt30004984" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -693,7 +697,7 @@
   <symbol id="def30004980">
     <a xlink:href="javascript:goTo('system.html', 'Essence/Fliet/30004980');" class="sys link-5-30004980" target="_top">
     <rect id="ice30004980" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
-      <rect id="rect30004980" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-0);" />
+      <rect id="rect30004980" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: #214600;" />
       <text x="28" y="14" class="ss" text-anchor="middle">Fliet</text>
       <text id="txt30004980" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -751,7 +755,7 @@
   </symbol>
   <symbol id="def30004985">
     <a xlink:href="javascript:goTo('system.html', 'Essence/Deven/30004985');" class="sys link-5-30004985" target="_top">
-      <rect id="rect30004985" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-20);" />
+      <rect id="rect30004985" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-0);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Deven</text>
       <text id="txt30004985" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -1148,9 +1152,9 @@
   <rect id="inc30004982" x="493.5" y="55.5" width="71" height="38" class="con" />
   <rect id="inc30004979" x="553.5" y="5.5" width="71" height="38" class="con" />
   <rect id="inc30004984" x="573.5" y="55.5" width="71" height="38" class="con" />
-  <rect id="inc30004980" x="693.5" y="-4.5" width="71" height="38" class="con" />
   <rect id="inc30004985" x="778.5" y="-4.5" width="71" height="38" class="con" />
   <rect id="inc30005321" x="68.5" y="290.5" width="71" height="38" class="con" />
+  <rect id="inc30005295" x="493.5" y="105.5" width="71" height="38" class="con" />
   <rect id="inc30045347" x="583.5" y="95.5" width="71" height="38" class="con" />
   <rect id="inc30002807" x="878.5" y="-4.5" width="71" height="38" class="con" />
 </g>

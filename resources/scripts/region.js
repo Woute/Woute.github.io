@@ -31,6 +31,15 @@ function highlightSystem(sysId) {
 	sys.style.strokeWidth = '3';
 }
 
+function selectShow() {
+	let selection = document.getElementById('selectShow').value;
+	if (selection == 'Jumps') {
+		showJumps();
+	} else if (selection == 'Kills') {
+		showKills();
+	}
+}
+
 function showJumps() {
 	let texts = document.getElementsByClassName('st');
 	httpRequest('GET', 'https://api.eveonline.com/map/Jumps.xml.aspx')

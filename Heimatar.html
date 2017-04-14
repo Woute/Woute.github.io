@@ -17,6 +17,10 @@
 	<input id="secret" type="text" placeholder="Your secret" /><br />
 	<button id="readCredentials" type="button" onclick="readCredentials();">Save</button>
 </div>
+<select id="selectShow" onchange="selectShow();">
+	<option value="Jumps">Jumps</option>
+	<option value="Kills">Kills</option>
+</select>
 
 <?xml version="1.0"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -158,7 +162,7 @@
   </symbol>
   <symbol id="def30002516">
     <a xlink:href="javascript:goTo('system.html', 'Heimatar/Lulm/30002516');" class="sys link-5-30002516" target="_top">
-      <rect id="rect30002516" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500002-40);" />
+      <rect id="rect30002516" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500002-20);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Lulm</text>
       <text id="txt30002516" x="28" y="21.7" class="st" text-anchor="middle">Minmatar</text>
     </a>
@@ -170,7 +174,7 @@
   </symbol>
   <symbol id="def30002539">
     <a xlink:href="javascript:goTo('system.html', 'Heimatar/Siseide/30002539');" class="sys link-5-30002539" target="_top">
-      <rect id="rect30002539" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-0);" />
+      <rect id="rect30002539" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-80);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Siseide</text>
       <text id="txt30002539" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -194,7 +198,7 @@
   </symbol>
   <symbol id="def30002514">
     <a xlink:href="javascript:goTo('system.html', 'Heimatar/Bosboger/30002514');" class="sys link-5-30002514" target="_top">
-      <rect id="rect30002514" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500002-20);" />
+      <rect id="rect30002514" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500002-0);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Bosboger</text>
       <text id="txt30002514" x="28" y="21.7" class="st" text-anchor="middle">Minmatar</text>
     </a>
@@ -243,7 +247,7 @@
   <symbol id="def30002538">
     <a xlink:href="javascript:goTo('system.html', 'Heimatar/Vard/30002538');" class="sys link-5-30002538" target="_top">
     <rect id="ice30002538" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
-      <rect id="rect30002538" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-20);" />
+      <rect id="rect30002538" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-100);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Vard</text>
       <text id="txt30002538" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -418,7 +422,7 @@
   </symbol>
   <symbol id="def30002541">
     <a xlink:href="javascript:goTo('system.html', 'Heimatar/Dal/30002541');" class="sys link-5-30002541" target="_top">
-      <rect id="rect30002541" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500002-40);" />
+      <rect id="rect30002541" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500002-0);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Dal</text>
       <text id="txt30002541" x="28" y="21.7" class="st" text-anchor="middle">Minmatar</text>
     </a>
@@ -1318,7 +1322,15 @@
 <text x="10" y="20" id="debug"  style="fill: #888888;"> </text>
 
 <g id="glow">
-
+  <rect id="inc30042547" x="-13.5" y="136.5" width="85" height="46" class="incs" />
+  <rect id="inc30002573" x="46.5" y="81.5" width="85" height="46" class="inc" />
+  <rect id="inc30002570" x="76.5" y="146.5" width="85" height="46" class="inc" />
+  <rect id="inc30022547" x="121.5" y="106.5" width="85" height="46" class="inc" />
+  <rect id="inc30002568" x="181.5" y="146.5" width="85" height="46" class="inc" />
+  <rect id="inc30032547" x="196.5" y="206.5" width="85" height="46" class="inc" />
+  <rect id="inc30002569" x="266.5" y="186.5" width="85" height="46" class="inc" />
+  <rect id="inc30002571" x="341.5" y="151.5" width="85" height="46" class="inc" />
+  <rect id="inc30002572" x="386.5" y="191.5" width="85" height="46" class="inc" />
   <rect id="inc30002516" x="-6.5" y="475.5" width="71" height="38" class="con" />
   <rect id="inc30002539" x="-6.5" y="690.5" width="71" height="38" class="con" />
   <rect id="inc30002514" x="43.5" y="440.5" width="71" height="38" class="con" />
@@ -1330,9 +1342,8 @@
   <rect id="inc30002541" x="208.5" y="690.5" width="71" height="38" class="con" />
   <rect id="inc30002962" x="-1.5" y="605.5" width="71" height="38" class="con" />
   <rect id="inc30002099" x="6.5" y="540.5" width="71" height="38" class="con" />
-  <rect id="inc30002095" x="112.5" y="732.5" width="71" height="38" class="con" />
+  <rect id="inc30003068" x="193.5" y="605.5" width="71" height="38" class="con" />
   <rect id="inc30002096" x="208.5" y="735.5" width="71" height="38" class="con" />
-  <rect id="inc30002064" x="453.5" y="295.5" width="71" height="38" class="con" />
 </g>
 
 <g id="campaigns"></g>

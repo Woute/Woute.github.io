@@ -17,6 +17,10 @@
 	<input id="secret" type="text" placeholder="Your secret" /><br />
 	<button id="readCredentials" type="button" onclick="readCredentials();">Save</button>
 </div>
+<select id="selectShow" onchange="selectShow();">
+	<option value="Jumps">Jumps</option>
+	<option value="Kills">Kills</option>
+</select>
 
 <?xml version="1.0"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -146,7 +150,7 @@
 <defs>
   <symbol id="def30003090">
     <a xlink:href="javascript:goTo('system.html', 'The_Bleak_Lands/Saidusairos/30003090');" class="sys link-5-30003090" target="_top">
-      <rect id="rect30003090" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-20);" />
+      <rect id="rect30003090" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-100);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Saidusairos</text>
       <text id="txt30003090" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -154,14 +158,14 @@
   <symbol id="def30003087">
     <a xlink:href="javascript:goTo('system.html', 'The_Bleak_Lands/Haras/30003087');" class="sys link-5-30003087" target="_top">
     <rect id="ice30003087" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
-      <rect id="rect30003087" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-20);" />
+      <rect id="rect30003087" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-80);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Haras</text>
       <text id="txt30003087" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
   </symbol>
   <symbol id="def30003079">
     <a xlink:href="javascript:goTo('system.html', 'The_Bleak_Lands/Saikamon/30003079');" class="sys link-5-30003079" target="_top">
-      <rect id="rect30003079" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-0);" />
+      <rect id="rect30003079" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-20);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Saikamon</text>
       <text id="txt30003079" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -174,7 +178,7 @@
   </symbol>
   <symbol id="def30003089">
     <a xlink:href="javascript:goTo('system.html', 'The_Bleak_Lands/Kurniainen/30003089');" class="sys link-5-30003089" target="_top">
-      <rect id="rect30003089" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-0);" />
+      <rect id="rect30003089" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-60);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Kurniainen</text>
       <text id="txt30003089" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -219,7 +223,7 @@
   </symbol>
   <symbol id="def30003088">
     <a xlink:href="javascript:goTo('system.html', 'The_Bleak_Lands/Oyonata/30003088');" class="sys link-5-30003088" target="_top">
-      <rect id="rect30003088" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-20);" />
+      <rect id="rect30003088" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-60);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Oyonata</text>
       <text id="txt30003088" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -300,7 +304,7 @@
   </symbol>
   <symbol id="def30003077">
     <a xlink:href="javascript:goTo('system.html', 'The_Bleak_Lands/Uusanen/30003077');" class="sys link-5-30003077" target="_top">
-      <rect id="rect30003077" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-20);" />
+      <rect id="rect30003077" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-60);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Uusanen</text>
       <text id="txt30003077" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -314,7 +318,7 @@
   <symbol id="def30003091">
     <a xlink:href="javascript:goTo('system.html', 'The_Bleak_Lands/Tannakan/30003091');" class="sys link-5-30003091" target="_top">
     <rect id="ice30003091" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
-      <rect id="rect30003091" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-20);" />
+      <rect id="rect30003091" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-60);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Tannakan</text>
       <text id="txt30003091" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -350,7 +354,7 @@
   </symbol>
   <symbol id="def30003071">
     <a xlink:href="javascript:goTo('system.html', 'The_Bleak_Lands/Anka/30003071');" class="sys link-5-30003071" target="_top">
-      <rect id="rect30003071" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-20);" />
+      <rect id="rect30003071" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-60);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Anka</text>
       <text id="txt30003071" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -363,7 +367,7 @@
   <symbol id="def30003070">
     <a xlink:href="javascript:goTo('system.html', 'The_Bleak_Lands/Sosala/30003070');" class="sys link-5-30003070" target="_top">
     <rect id="ice30003070" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
-      <rect id="rect30003070" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: #6D6000;" />
+      <rect id="rect30003070" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-40);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Sosala</text>
       <text id="txt30003070" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -452,7 +456,7 @@
   </symbol>
   <symbol id="def30003063">
     <a xlink:href="javascript:goTo('system.html', 'The_Bleak_Lands/Lamaa/30003063');" class="sys link-5-30003063" target="_top">
-      <rect id="rect30003063" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-0);" />
+      <rect id="rect30003063" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-40);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Lamaa</text>
       <text id="txt30003063" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -482,7 +486,7 @@
   </symbol>
   <symbol id="def30003068">
     <a xlink:href="javascript:goTo('system.html', 'The_Bleak_Lands/Kourmonen/30003068');" class="sys link-5-30003068" target="_top">
-      <rect id="rect30003068" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: #6D6000;" />
+      <rect id="rect30003068" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-20);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Kourmonen</text>
       <text id="txt30003068" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -508,7 +512,7 @@
   </symbol>
   <symbol id="def30003067">
     <a xlink:href="javascript:goTo('system.html', 'The_Bleak_Lands/Huola/30003067');" class="sys link-5-30003067" target="_top">
-      <rect id="rect30003067" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500003-0);" />
+      <rect id="rect30003067" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: #6D6000;" />
       <text x="28" y="14" class="ss" text-anchor="middle">Huola</text>
       <text id="txt30003067" x="28" y="21.7" class="st" text-anchor="middle">Amarr</text>
     </a>
@@ -723,13 +727,14 @@
   <rect id="inc30003077" x="363.5" y="295.5" width="71" height="38" class="con" />
   <rect id="inc30003091" x="378.5" y="170.5" width="71" height="38" class="con" />
   <rect id="inc30003071" x="428.5" y="245.5" width="71" height="38" class="con" />
+  <rect id="inc30003070" x="463.5" y="315.5" width="71" height="38" class="con" />
   <rect id="inc30003069" x="723.5" y="410.5" width="71" height="38" class="con" />
   <rect id="inc30003063" x="743.5" y="330.5" width="71" height="38" class="con" />
-  <rect id="inc30003067" x="898.5" y="365.5" width="71" height="38" class="con" />
-  <rect id="inc30002087" x="224.5" y="10.5" width="71" height="38" class="con" />
+  <rect id="inc30003068" x="833.5" y="330.5" width="71" height="38" class="con" />
   <rect id="inc30002980" x="318.5" y="50.5" width="71" height="38" class="con" />
   <rect id="inc30002957" x="743.5" y="285.5" width="71" height="38" class="con" />
   <rect id="inc30002542" x="843.5" y="280.5" width="71" height="38" class="con" />
+  <rect id="inc30002975" x="953.5" y="315.5" width="71" height="38" class="con" />
 </g>
 
 <g id="campaigns"></g>

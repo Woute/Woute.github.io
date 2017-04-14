@@ -17,6 +17,10 @@
 	<input id="secret" type="text" placeholder="Your secret" /><br />
 	<button id="readCredentials" type="button" onclick="readCredentials();">Save</button>
 </div>
+<select id="selectShow" onchange="selectShow();">
+	<option value="Jumps">Jumps</option>
+	<option value="Kills">Kills</option>
+</select>
 
 <?xml version="1.0"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -147,7 +151,7 @@
   <symbol id="def30002808">
     <a xlink:href="javascript:goTo('system.html', 'The_Citadel/Oto/30002808');" class="sys link-5-30002808" target="_top">
     <rect id="ice30002808" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
-      <rect id="rect30002808" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-0);" />
+      <rect id="rect30002808" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-20);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Oto</text>
       <text id="txt30002808" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -212,7 +216,7 @@
   </symbol>
   <symbol id="def30002806">
     <a xlink:href="javascript:goTo('system.html', 'The_Citadel/Hasmijaala/30002806');" class="sys link-5-30002806" target="_top">
-      <rect id="rect30002806" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-40);" />
+      <rect id="rect30002806" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-20);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Hasmijaala</text>
       <text id="txt30002806" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -231,7 +235,7 @@
   <symbol id="def30002796">
     <a xlink:href="javascript:goTo('system.html', 'The_Citadel/Hysera/30002796');" class="sys link-5-30002796" target="_top">
     <rect id="ice30002796" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
-      <rect id="rect30002796" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-60);" />
+      <rect id="rect30002796" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-20);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Hysera</text>
       <text id="txt30002796" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -286,7 +290,7 @@
   </symbol>
   <symbol id="def30002811">
     <a xlink:href="javascript:goTo('system.html', 'The_Citadel/Onatoh/30002811');" class="sys link-5-30002811" target="_top">
-      <rect id="rect30002811" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-20);" />
+      <rect id="rect30002811" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-0);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Onatoh</text>
       <text id="txt30002811" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -297,7 +301,7 @@
   </symbol>
   <symbol id="def30002809">
     <a xlink:href="javascript:goTo('system.html', 'The_Citadel/Sujarento/30002809');" class="sys link-5-30002809" target="_top">
-      <rect id="rect30002809" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-0);" />
+      <rect id="rect30002809" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: #214600;" />
       <text x="28" y="14" class="ss" text-anchor="middle">Sujarento</text>
       <text id="txt30002809" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -460,7 +464,7 @@
   </symbol>
   <symbol id="def30002813">
     <a xlink:href="javascript:goTo('system.html', 'The_Citadel/Tama/30002813');" class="sys link-5-30002813" target="_top">
-      <rect id="rect30002813" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-40);" />
+      <rect id="rect30002813" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500004-20);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Tama</text>
       <text id="txt30002813" x="28" y="21.7" class="st" text-anchor="middle">Gallente</text>
     </a>
@@ -1079,7 +1083,7 @@
   </symbol>
   <symbol id="def30002759">
     <a xlink:href="javascript:goTo('system.html', 'The_Citadel/Uuna/30002759');" class="sys link-5-30002759" target="_top">
-      <rect id="rect30002759" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-0);" />
+      <rect id="rect30002759" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-40);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Uuna</text>
       <text id="txt30002759" x="28" y="21.7" class="st" text-anchor="middle">Caldari</text>
     </a>
@@ -1103,7 +1107,7 @@
   </symbol>
   <symbol id="def30002757">
     <a xlink:href="javascript:goTo('system.html', 'The_Citadel/Nikkishina/30002757');" class="sys link-5-30002757" target="_top">
-      <rect id="rect30002757" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-0);" />
+      <rect id="rect30002757" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-40);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Nikkishina</text>
       <text id="txt30002757" x="28" y="21.7" class="st" text-anchor="middle">Caldari</text>
     </a>
@@ -1114,7 +1118,7 @@
   </symbol>
   <symbol id="def30002760">
     <a xlink:href="javascript:goTo('system.html', 'The_Citadel/Manjonakko/30002760');" class="sys link-5-30002760" target="_top">
-      <rect id="rect30002760" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-0);" />
+      <rect id="rect30002760" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-20);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Manjonakko</text>
       <text id="txt30002760" x="28" y="21.7" class="st" text-anchor="middle">Caldari</text>
     </a>
@@ -1140,7 +1144,7 @@
   <symbol id="def30002758">
     <a xlink:href="javascript:goTo('system.html', 'The_Citadel/Hasama/30002758');" class="sys link-5-30002758" target="_top">
     <rect id="ice30002758" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
-      <rect id="rect30002758" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-20);" />
+      <rect id="rect30002758" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="sl" style="fill: url(#fw500001-60);" />
       <text x="28" y="14" class="ss" text-anchor="middle">Hasama</text>
       <text id="txt30002758" x="28" y="21.7" class="st" text-anchor="middle">Caldari</text>
     </a>
@@ -1475,7 +1479,6 @@
   <rect id="inc30002807" x="63.5" y="290.5" width="71" height="38" class="con" />
   <rect id="inc30002796" x="63.5" y="385.5" width="71" height="38" class="con" />
   <rect id="inc30002811" x="118.5" y="200.5" width="71" height="38" class="con" />
-  <rect id="inc30002809" x="128.5" y="250.5" width="71" height="38" class="con" />
   <rect id="inc30002810" x="188.5" y="210.5" width="71" height="38" class="con" />
   <rect id="inc30002813" x="228.5" y="235.5" width="71" height="38" class="con" />
   <rect id="inc30002759" x="823.5" y="75.5" width="71" height="38" class="con" />

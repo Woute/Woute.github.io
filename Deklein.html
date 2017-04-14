@@ -17,6 +17,10 @@
 	<input id="secret" type="text" placeholder="Your secret" /><br />
 	<button id="readCredentials" type="button" onclick="readCredentials();">Save</button>
 </div>
+<select id="selectShow" onchange="selectShow();">
+	<option value="Jumps">Jumps</option>
+	<option value="Kills">Kills</option>
+</select>
 
 <?xml version="1.0"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -303,7 +307,7 @@
     <a xlink:href="javascript:goTo('system.html', 'Deklein/E3UY-6/30002931');" class="sys link-5-30002931" target="_top">
       <rect id="rect30002931" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #392100;" />
       <text x="28" y="14" class="ss" text-anchor="middle">E3UY-6</text>
-      <text id="txt30002931" x="28" y="21.7" class="st so" text-anchor="middle">KOS (3)</text>
+      <text id="txt30002931" x="28" y="21.7" class="st so" text-anchor="middle">KOS (4)</text>
     </a>
   </symbol>
   <symbol id="def30002940">
@@ -358,7 +362,7 @@
     <a xlink:href="javascript:goTo('system.html', 'Deklein/LT-DRO/30002928');" class="sys link-5-30002928" target="_top">
       <rect id="rect30002928" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #392100;" />
       <text x="28" y="14" class="ss" text-anchor="middle">LT-DRO</text>
-      <text id="txt30002928" x="28" y="21.7" class="st so" text-anchor="middle">KOS (3)</text>
+      <text id="txt30002928" x="28" y="21.7" class="st so" text-anchor="middle">KOS (4)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="oa" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />
@@ -368,7 +372,7 @@
     <a xlink:href="javascript:goTo('system.html', 'Deklein/5W3-DG/30002927');" class="sys link-5-30002927" target="_top">
       <rect id="rect30002927" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #392100;" />
       <text x="28" y="14" class="ss" text-anchor="middle">5W3-DG</text>
-      <text id="txt30002927" x="28" y="21.7" class="st so" text-anchor="middle">KOS (3)</text>
+      <text id="txt30002927" x="28" y="21.7" class="st so" text-anchor="middle">KOS (4)</text>
     </a>
   </symbol>
   <symbol id="def30002930">
@@ -406,7 +410,7 @@
     <a xlink:href="javascript:goTo('system.html', 'Deklein/RO0-AF/30002926');" class="sys link-5-30002926" target="_top">
       <rect id="rect30002926" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #392100;" />
       <text x="28" y="14" class="ss" text-anchor="middle">RO0-AF</text>
-      <text id="txt30002926" x="28" y="21.7" class="st so" text-anchor="middle">KOS (3)</text>
+      <text id="txt30002926" x="28" y="21.7" class="st so" text-anchor="middle">KOS (4)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="om" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />
@@ -416,7 +420,7 @@
     <a xlink:href="javascript:goTo('system.html', 'Deklein/7T6P-C/30002929');" class="sys link-5-30002929" target="_top">
       <rect id="rect30002929" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #392100;" />
       <text x="28" y="14" class="ss" text-anchor="middle">7T6P-C</text>
-      <text id="txt30002929" x="28" y="21.7" class="st so" text-anchor="middle">KOS (3)</text>
+      <text id="txt30002929" x="28" y="21.7" class="st so" text-anchor="middle">KOS (4)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="oa" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />
@@ -436,7 +440,7 @@
     <a xlink:href="javascript:goTo('system.html', 'Deklein/ZOYW-O/30002923');" class="sys link-5-30002923" target="_top">
       <rect id="rect30002923" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #466D5E;" />
       <text x="28" y="14" class="ss" text-anchor="middle">ZOYW-O</text>
-      <text id="txt30002923" x="28" y="21.7" class="st so" text-anchor="middle">MOA (3)</text>
+      <text id="txt30002923" x="28" y="21.7" class="st so" text-anchor="middle">MOA (4)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="oa" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />
@@ -497,7 +501,7 @@
     <a xlink:href="javascript:goTo('system.html', 'Deklein/YZ-UKA/30002925');" class="sys link-5-30002925" target="_top">
       <rect id="rect30002925" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #466D5E;" />
       <text x="28" y="14" class="ss" text-anchor="middle">YZ-UKA</text>
-      <text id="txt30002925" x="28" y="21.7" class="st so" text-anchor="middle">MOA (3)</text>
+      <text id="txt30002925" x="28" y="21.7" class="st so" text-anchor="middle">MOA (4)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="oa" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />
@@ -508,7 +512,7 @@
     <rect id="ice30002922" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
       <rect id="rect30002922" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #466D5E;" />
       <text x="28" y="14" class="ss" text-anchor="middle">E-FIC0</text>
-      <text id="txt30002922" x="28" y="21.7" class="st so" text-anchor="middle">MOA (3)</text>
+      <text id="txt30002922" x="28" y="21.7" class="st so" text-anchor="middle">MOA (4)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="oa" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />
@@ -546,7 +550,7 @@
     <a xlink:href="javascript:goTo('system.html', 'Deklein/3QE-9Q/30002921');" class="sys link-5-30002921" target="_top">
       <rect id="rect30002921" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #466D5E;" />
       <text x="28" y="14" class="ss" text-anchor="middle">3QE-9Q</text>
-      <text id="txt30002921" x="28" y="21.7" class="st so" text-anchor="middle">MOA (3)</text>
+      <text id="txt30002921" x="28" y="21.7" class="st so" text-anchor="middle">MOA (4)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="oc" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />
@@ -573,7 +577,7 @@
     <a xlink:href="javascript:goTo('system.html', 'Deklein/85-B52/30002924');" class="sys link-5-30002924" target="_top">
       <rect id="rect30002924" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #466D5E;" />
       <text x="28" y="14" class="ss" text-anchor="middle">85-B52</text>
-      <text id="txt30002924" x="28" y="21.7" class="st so" text-anchor="middle">MOA (1)</text>
+      <text id="txt30002924" x="28" y="21.7" class="st so" text-anchor="middle">MOA (3)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="om" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />
@@ -607,7 +611,7 @@
     <a xlink:href="javascript:goTo('system.html', 'Deklein/MXX5-9/30002913');" class="sys link-5-30002913" target="_top">
       <rect id="rect30002913" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #466D5E;" />
       <text x="28" y="14" class="ss" text-anchor="middle">MXX5-9</text>
-      <text id="txt30002913" x="28" y="21.7" class="st so" text-anchor="middle">MOA (3)</text>
+      <text id="txt30002913" x="28" y="21.7" class="st so" text-anchor="middle">MOA (4)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="oa" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />
@@ -617,7 +621,7 @@
     <a xlink:href="javascript:goTo('system.html', 'Deklein/ZZZR-5/30002914');" class="sys link-5-30002914" target="_top">
       <rect id="rect30002914" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #466D5E;" />
       <text x="28" y="14" class="ss" text-anchor="middle">ZZZR-5</text>
-      <text id="txt30002914" x="28" y="21.7" class="st so" text-anchor="middle">MOA (3)</text>
+      <text id="txt30002914" x="28" y="21.7" class="st so" text-anchor="middle">MOA (4)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="om" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />
@@ -648,7 +652,7 @@
     <rect id="ice30002911" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
       <rect id="rect30002911" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #282828;" />
       <text x="28" y="14" class="ss" text-anchor="middle">JU-OWQ</text>
-      <text id="txt30002911" x="28" y="21.7" class="st so" text-anchor="middle">SLYCE (2)</text>
+      <text id="txt30002911" x="28" y="21.7" class="st so" text-anchor="middle">SLYCE (3)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="om" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />
@@ -709,7 +713,7 @@
     <rect id="ice30002909" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
       <rect id="rect30002909" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #282828;" />
       <text x="28" y="14" class="ss" text-anchor="middle">2O9G-D</text>
-      <text id="txt30002909" x="28" y="21.7" class="st so" text-anchor="middle">SLYCE (2)</text>
+      <text id="txt30002909" x="28" y="21.7" class="st so" text-anchor="middle">SLYCE (3)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="oa" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />
@@ -719,7 +723,7 @@
     <a xlink:href="javascript:goTo('system.html', 'Deklein/NC-N3F/30002910');" class="sys link-5-30002910" target="_top">
       <rect id="rect30002910" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #282828;" />
       <text x="28" y="14" class="ss" text-anchor="middle">NC-N3F</text>
-      <text id="txt30002910" x="28" y="21.7" class="st so" text-anchor="middle">SLYCE (2)</text>
+      <text id="txt30002910" x="28" y="21.7" class="st so" text-anchor="middle">SLYCE (3)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="om" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />

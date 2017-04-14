@@ -17,6 +17,10 @@
 	<input id="secret" type="text" placeholder="Your secret" /><br />
 	<button id="readCredentials" type="button" onclick="readCredentials();">Save</button>
 </div>
+<select id="selectShow" onchange="selectShow();">
+	<option value="Jumps">Jumps</option>
+	<option value="Kills">Kills</option>
+</select>
 
 <?xml version="1.0"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
@@ -379,7 +383,7 @@
     <a xlink:href="javascript:goTo('system.html', 'Perrigen_Falls/F18-AY/30005187');" class="sys link-5-30005187" target="_top">
       <rect id="rect30005187" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #314F69;" />
       <text x="28" y="14" class="ss" text-anchor="middle">F18-AY</text>
-      <text id="txt30005187" x="28" y="21.7" class="st so" text-anchor="middle">-DNS- (4)</text>
+      <text id="txt30005187" x="28" y="21.7" class="st so" text-anchor="middle">-DNS- (5)</text>
     </a>
   </symbol>
   <symbol id="def30005092">
@@ -473,14 +477,14 @@
     <a xlink:href="javascript:goTo('system.html', 'Perrigen_Falls/9-EXU9/30005148');" class="sys link-5-30005148" target="_top">
       <rect id="rect30005148" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #00460F;" />
       <text x="28" y="14" class="ss" text-anchor="middle">9-EXU9</text>
-      <text id="txt30005148" x="28" y="21.7" class="st so" text-anchor="middle">DIVE (3)</text>
+      <text id="txt30005148" x="28" y="21.7" class="st so" text-anchor="middle">DIVE (4)</text>
     </a>
   </symbol>
   <symbol id="def30005146">
     <a xlink:href="javascript:goTo('system.html', 'Perrigen_Falls/7MMJ-3/30005146');" class="sys link-5-30005146" target="_top">
       <rect id="rect30005146" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #00460F;" />
       <text x="28" y="14" class="ss" text-anchor="middle">7MMJ-3</text>
-      <text id="txt30005146" x="28" y="21.7" class="st so" text-anchor="middle">DIVE (3)</text>
+      <text id="txt30005146" x="28" y="21.7" class="st so" text-anchor="middle">DIVE (4)</text>
     </a>
   </symbol>
   <symbol id="def30005091">
@@ -559,7 +563,7 @@
     <a xlink:href="javascript:goTo('system.html', 'Perrigen_Falls/W-CSFY/30005177');" class="sys link-5-30005177" target="_top">
       <rect id="rect30005177" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #5D5D5D;" />
       <text x="28" y="14" class="ss" text-anchor="middle">W-CSFY</text>
-      <text id="txt30005177" x="28" y="21.7" class="st so" text-anchor="middle">-RZR- (1)</text>
+      <text id="txt30005177" x="28" y="21.7" class="st so" text-anchor="middle">-RZR- (3)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="om" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />
@@ -660,7 +664,7 @@
     <a xlink:href="javascript:goTo('system.html', 'Perrigen_Falls/5V-Q1R/30005152');" class="sys link-5-30005152" target="_top">
       <rect id="rect30005152" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #5D5D5D;" />
       <text x="28" y="14" class="ss" text-anchor="middle">5V-Q1R</text>
-      <text id="txt30005152" x="28" y="21.7" class="st so" text-anchor="middle">-RZR- (1)</text>
+      <text id="txt30005152" x="28" y="21.7" class="st so" text-anchor="middle">-RZR- (3)</text>
     </a>
   </symbol>
   <symbol id="def30005155">
@@ -740,7 +744,7 @@
     <rect id="ice30005154" x="1" y="0.5" rx="14" ry="13" width="56" height="28" class="i" />
       <rect id="rect30005154" x="4" y="3.5" rx="11" ry="11" width="50" height="22"  class="s" style="fill: #5D5D5D;" />
       <text x="28" y="14" class="ss" text-anchor="middle">4F9Y-3</text>
-      <text id="txt30005154" x="28" y="21.7" class="st so" text-anchor="middle">-RZR- (1)</text>
+      <text id="txt30005154" x="28" y="21.7" class="st so" text-anchor="middle">-RZR- (3)</text>
     </a>
     <rect x="49.6" y="9.5" height="11" width="11" class="oa" />
     <polygon points="51.8,15 58.4,11.7 58.4,18.3 51.8,15"  class="o1" />
@@ -1172,7 +1176,12 @@
 <text x="10" y="20" id="debug"  style="fill: #888888;"> </text>
 
 <g id="glow">
-
+  <rect id="inc30005180" x="806.5" y="301.5" width="85" height="46" class="inc" />
+  <rect id="inc30005183" x="866.5" y="211.5" width="85" height="46" class="inc" />
+  <rect id="inc30005184" x="866.5" y="261.5" width="85" height="46" class="inc" />
+  <rect id="inc30005185" x="916.5" y="376.5" width="85" height="46" class="inc" />
+  <rect id="inc30005182" x="931.5" y="326.5" width="85" height="46" class="inc" />
+  <rect id="inc30005181" x="941.5" y="281.5" width="85" height="46" class="incs" />
 
 </g>
 
