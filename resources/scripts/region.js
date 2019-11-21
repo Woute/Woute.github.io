@@ -93,7 +93,7 @@ function showKills() {
 			console.log(sysId);
 			let result = JSON.parse(response);
 			let system = result.find(obj => {
-				if obj.system_id === sysId {
+				if (obj.system_id === sysId) {
 					console.log(obj);
 				}
 				return obj.system_id === sysId
