@@ -37,7 +37,8 @@ function getLocation() {
 		if (typeof characterID == 'undefined' || characterID == '' || characterID == null) {
 			return false;
 		}
-		let address = 'https://crest-tq.eveonline.com/characters/' + characterID.toString() + '/location/';
+		let apiVersion = 'v1';
+		let address = 'https://crest-tq.eveonline.com/' + apiVersion + '/characters/' + characterID.toString() + '/location/';
 		let location = {};
 		httpRequest('GET', address, true)
 		.then(response => {
