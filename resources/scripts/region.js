@@ -1,23 +1,23 @@
 'use strict';
 
-function setDestination(id) {  
+
+function setDestination(sysId) {  
     let characterID = localStorage.getItem('characterID');
     let clearOtherWaypoints = false;
-    let first = false;
+    let addToBeginning = false;
+    let apiVersion = 'latest';
+    let baseURI = 'https://esi.evetech.net/'
     if (event.shiftKey) {
 		first = true;
 	}
 	if (event.ctrlKey) {
 		clearOtherWaypoints = true;
 	}
-    let address = 'https://crest-tq.eveonline.com/characters/' + characterID.toString() + '/ui/autopilot/waypoints/';
+    let address = baseURI + apiVersion + '/characters/ui/autopilot/waypoint/';
 	let data = {
-		'clearOtherWaypoints': clearOtherWaypoints,
-		'first': first,
-		'solarSystem': {
-			'href': 'https://crest-tq.eveonline.com/solarsystems/' + id.toString() + '/',
-			'id': id
-		}
+		'clear_other_waypoints ': clearOtherWaypoints,
+		'add_to_beginning': addToBeginning,
+		'destination_id': sysId
 	}
 	httpRequest('POST', address, true, JSON.stringify(data))
 	.catch(err => {
@@ -42,20 +42,8 @@ function selectShow() {
 
 function showJumps() {
 	let texts = document.getElementsByClassName('st');
-	httpRequest('GET', 'https://api.eveonline.com/map/Jumps.xml.aspx')
+	httpRequest('GET', 'https://esi.evetech.net/latest/universe/system_jumps/')
 	.then(response => {
-		let xmlDoc = null;
-		if (window.DOMParser)
-		{
-			let parser = new DOMParser();
-			xmlDoc = parser.parseFromString(response, "text/xml");
-		}
-		else // Internet Explorer
-		{
-			xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
-			xmlDoc.async = false;
-			xmlDoc.loadXML(response);
-		}
 		for (let i = 1 ; i < texts.length ; ++i) {
 			let sysId = texts[i].id.substring(3);
 			let row = xmlDoc.querySelector('[solarSystemID="' + sysId + '"]');
@@ -95,20 +83,8 @@ function showJumps() {
 
 function showKills() {
 	let texts = document.getElementsByClassName('st');
-	httpRequest('GET', 'https://api.eveonline.com/map/Kills.xml.aspx')
+	httpRequest('GET', 'https://esi.evetech.net/latest/universe/system_kills/')
 	.then(response => {
-		let xmlDoc = null;
-		if (window.DOMParser)
-		{
-			let parser = new DOMParser();
-			xmlDoc = parser.parseFromString(response, "text/xml");
-		}
-		else // Internet Explorer
-		{
-			xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
-			xmlDoc.async = false;
-			xmlDoc.loadXML(response);
-		}
 		for (let i = 1 ; i < texts.length ; ++i) {
 			let sysId = texts[i].id.substring(3);
 			let row = xmlDoc.querySelector('[solarSystemID="' + sysId + '"]');
