@@ -47,7 +47,7 @@ function showJumps() {
 		for (let i = 1 ; i < texts.length ; ++i) {
 			let sysId = texts[i].id.substring(3);
 			let result = JSON.parse(response);
-			let system = result.find(obj => obj.system_id === sysId)
+			let system = result.find(obj => obj.system_id.toString() === sysId.toString())
 			let jumps = '0'
 			if (system != undefined) jumps = system.ship_jumps;
 			texts[i].innerHTML = jumps;
@@ -90,10 +90,7 @@ function showKills() {
 			let sysId = texts[i].id.substring(3);
 			console.log(sysId);
 			let result = JSON.parse(response);
-			let system = result.find(obj => {
-				console.log(obj.system_id + ' _ ' + sysId);
-				return obj.system_id === sysId
-			})
+			let system = result.find(obj => obj.system_id.toString() === sysId.toString())
 			let shipKills = '0';
 			let podKills = '0';
 			let npcKills = '0';
