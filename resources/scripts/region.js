@@ -93,7 +93,6 @@ function showKills() {
 			let shipKills = '0';
 			let podKills = '0';
 			let npcKills = '0';
-			console.log(system);
 			if (system != undefined) {
 				shipKills = system.ship_kills;
 				podKills = system.pod_kills;
