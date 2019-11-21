@@ -97,7 +97,7 @@ function showKills() {
 			if (system != undefined) {
 				shipKills = system.ship_kills;
 				podKills = system.pod_kills;
-				npcKills = system.npc_kill;
+				npcKills = system.npc_kills;
 			}
 			texts[i].innerHTML = shipKills + ' / ' + podKills + ' (' + npcKills + ')';
 			texts[i].classList.remove('so');
