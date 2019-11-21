@@ -37,23 +37,27 @@ function getLocation() {
 		if (typeof characterID == 'undefined' || characterID == '' || characterID == null) {
 			return false;
 		}
-		let apiVersion = 'v1';
-		let address = 'https://crest-tq.eveonline.com/' + apiVersion + '/characters/' + characterID.toString() + '/location/';
+		let apiVersion = 'latest';
+		let baseURI = 'https://esi.evetech.net/'
+		let address = baseURI + apiVersion + '/characters/' + characterID.toString() + '/location/';
 		let location = {};
 		httpRequest('GET', address, true)
 		.then(response => {
 			let result = JSON.parse(response);
-			location['name'] = result.solarSystem.name;
-			location['id'] = result.solarSystem.id;
-			return httpRequest('GET', result.solarSystem.href, false);
+			location['id'] = result.solar_system_id;
+			address = baseURI + apiVersion + '/universe/systems/' + location.id
+			return httpRequest('GET', address, false);
 		})
 		.then(response => {
 			let result = JSON.parse(response);
-			return httpRequest('GET', result.constellation.href, false);
+			location['name'] = result.name
+			address = baseURI + apiVersion + '/universe/constellations/' + result.constellation_id
+			return httpRequest('GET', address, false);
 		})
 		.then(response => {
 			let result = JSON.parse(response);
-			return httpRequest('GET', result.region.href, false);
+			address = baseURI + apiVersion + '/universe/regions/' + result.region_id
+			return httpRequest('GET', address, false);
 		})
 		.then(response => {
 			let result = JSON.parse(response);
