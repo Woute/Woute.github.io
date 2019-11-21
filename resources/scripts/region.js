@@ -91,12 +91,14 @@ function showKills() {
 		for (let i = 1 ; i < texts.length ; ++i) {
 			let sysId = texts[i].id.substring(3);
 			let result = JSON.parse(response);
+			console.log(result);
 			let system = result.find(obj => {
 				return obj.system_id === sysId
 			})
 			let shipKills = '0';
 			let podKills = '0';
 			let npcKills = '0';
+			console.log(system);
 			if (system != undefined) {
 				shipKills = system.ship_kills;
 				podKills = system.pod_kills;
