@@ -90,9 +90,12 @@ function showKills() {
 	.then(response => {
 		for (let i = 1 ; i < texts.length ; ++i) {
 			let sysId = texts[i].id.substring(3);
+			console.log(sysId);
 			let result = JSON.parse(response);
-			console.log(result);
 			let system = result.find(obj => {
+				if obj.system_id === sysId {
+					console.log(obj);
+				}
 				return obj.system_id === sysId
 			})
 			let shipKills = '0';
