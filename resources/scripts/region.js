@@ -46,9 +46,12 @@ function showJumps() {
 	.then(response => {
 		for (let i = 1 ; i < texts.length ; ++i) {
 			let sysId = texts[i].id.substring(3);
-			let row = xmlDoc.querySelector('[solarSystemID="' + sysId + '"]');
+			let result = JSON.parse(response);
+			let system = result.find(obj => {
+				return obj.system_id === sysId
+			})
 			let jumps = '0'
-			if (row != null) jumps = row.getAttribute('shipJumps');
+			if (system != undefined) jumps = system.ship_jumps;
 			texts[i].innerHTML = jumps;
 			texts[i].classList.remove('so');
 			let color = '#000000';
@@ -87,16 +90,19 @@ function showKills() {
 	.then(response => {
 		for (let i = 1 ; i < texts.length ; ++i) {
 			let sysId = texts[i].id.substring(3);
-			let row = xmlDoc.querySelector('[solarSystemID="' + sysId + '"]');
+			let result = JSON.parse(response);
+			let system = result.find(obj => {
+				return obj.system_id === sysId
+			})
 			let shipKills = '0';
 			let podKills = '0';
-			let factionKills = '0';
+			let npcKills = '0';
 			if (row != null) {
-				shipKills = row.getAttribute('shipKills');
-				podKills = row.getAttribute('podKills');
-				factionKills = row.getAttribute('factionKills');
+				shipKills = system.ship_kills;
+				podKills = system.pod_kills;
+				npcKills = system.npc_kill;
 			}
-			texts[i].innerHTML = shipKills + ' / ' + podKills + ' (' + factionKills + ')';
+			texts[i].innerHTML = shipKills + ' / ' + podKills + ' (' + npcKills + ')';
 			texts[i].classList.remove('so');
 			let color = '#000000';
 			switch (true) {
