@@ -84,7 +84,7 @@ function httpRequest(method, url, auth, data, headers) {
 		xhr.onload = function () {
 			if (this.status >= 200 && this.status < 300) {
 				return resolve(xhr.response);
-			} else if (refresh && auth && this.status == 401) {
+			} else if (refresh && auth && this.status == 403) {
 				let refreshUrl = 'https://evescanner-gatekeeper.herokuapp.com/refresh';
 				let refreshData = {
 					'clientID': localStorage.getItem('clientID'),
