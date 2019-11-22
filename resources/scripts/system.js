@@ -157,7 +157,9 @@ function newCScan(input) {
 		if (d.document) d = d.document;
 		d.open();
 		let result = JSON.parse(response);
-		d.write(JSON.stringify(result.appraisal.totals));
+		let total = parseInt(result.appraisal.totals.sell, 10)
+		let total =  total / 1000000 - total % 1000000;
+		d.write(total);
 		d.onkeyup = window.parent.keys;
 		d.close();
 		iframe.style.display = 'inline-block';
