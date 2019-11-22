@@ -134,12 +134,6 @@ function newPScan(input, system) {
 }
 
 function newCScan(input) {
-	let lines = input.split('\n');
-	let raw = '';
-	for (let i = 0 ; i < lines.length ; ++i) {
-		raw += lines[i].replace(' ', '+') + '%0A';
-	}
-	raw = 'raw_paste=' + raw + '&hide_buttons=false&paste_autosubmit=false&market=30000142&save=true';
 	let data = {
 		'raw': raw
 	}
