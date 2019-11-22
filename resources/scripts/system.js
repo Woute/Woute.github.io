@@ -152,6 +152,7 @@ function newCScan(input) {
 		if (d.document) d = d.document;
 		d.open();
 		d.write(response);
+		console.log(response);
 		d.body.style.overflow = 'hidden';
 		d.onkeyup = window.parent.keys;
 		d.close();
