@@ -159,8 +159,8 @@ function newCScan(input) {
 		let result = JSON.parse(response);
 		let total = parseInt(result.appraisal.totals.sell, 10);
 		total = total / 1000000;
-		total = total.toFixed(2).toString() + 'm'.fontsize(20);
-		d.write(total);
+		total = total.toFixed(2).toString() + 'm';
+		d.write(total.fontsize(20));
 		d.onkeyup = window.parent.keys;
 		d.close();
 		iframe.style.display = 'inline-block';
