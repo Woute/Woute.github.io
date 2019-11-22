@@ -134,11 +134,13 @@ function newPScan(input, system) {
 }
 
 function newCScan(input) {
-	let data = {
-		'raw': input
+	let lines = input.split('\n');
+	let raw = '';
+	for (let i = 0 ; i < lines.length ; ++i) {
+		raw += lines[i].replace(' ', '+') + '%0A';
 	}
-	let url = 'https://evescanner-gatekeeper.herokuapp.com/evepraisal';
-	httpRequest('POST', url, false, JSON.stringify(data), {'Content-Type': 'application/json'})
+	let url = 'https://evepraisal.com/appraisal.json?market=jita&raw_textarea=' + raw + '&persist=no';
+	httpRequest('POST', url, false)
 	.then(response => {
 		let iframe = document.getElementById('iframe');
 		while (iframe.firstChild) {
@@ -151,9 +153,8 @@ function newCScan(input) {
 		let d = (CScanResults.contentWindow || CScanResults.contentDocument);
 		if (d.document) d = d.document;
 		d.open();
-		d.write(response);
-		console.log(response);
-		d.html.style.overflow = 'hidden';
+		let result = JSON.parse(response);
+		d.write(response.appraisal.totals.toString());
 		d.onkeyup = window.parent.keys;
 		d.close();
 		iframe.style.display = 'inline-block';
