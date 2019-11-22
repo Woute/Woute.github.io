@@ -157,8 +157,7 @@ function newCScan(input) {
 		if (d.document) d = d.document;
 		d.open();
 		let result = JSON.parse(response);
-		console.log(result);
-		d.write(result.appraisal.totals.toString());
+		d.write(JSON.stringify(result.appraisal.totals));
 		d.onkeyup = window.parent.keys;
 		d.close();
 		iframe.style.display = 'inline-block';
