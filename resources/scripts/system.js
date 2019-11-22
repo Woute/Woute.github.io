@@ -139,8 +139,11 @@ function newCScan(input) {
 	for (let i = 0 ; i < lines.length ; ++i) {
 		raw += lines[i].replace(' ', '+') + '%0A';
 	}
-	let url = 'https://evepraisal.com/appraisal.json?market=jita&raw_textarea=' + raw + '&persist=no';
-	httpRequest('POST', url, false)
+	let data = {
+		'url': 'https://evepraisal.com/appraisal.json?market=jita&raw_textarea=' + raw + '&persist=no'
+	}
+	let url = 'https://evescanner-gatekeeper.herokuapp.com/evepraisal';
+	httpRequest('POST', url, false, JSON.stringify(data), {'Content-Type': 'application/json'})
 	.then(response => {
 		let iframe = document.getElementById('iframe');
 		while (iframe.firstChild) {
