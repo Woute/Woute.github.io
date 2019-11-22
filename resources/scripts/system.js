@@ -158,7 +158,7 @@ function newCScan(input) {
 		d.open();
 		let result = JSON.parse(response);
 		let total = parseInt(result.appraisal.totals.sell, 10)
-		let total =  total / 1000000 - total % 1000000;
+		total = total / 1000000 - total % 1000000;
 		d.write(total);
 		d.onkeyup = window.parent.keys;
 		d.close();
