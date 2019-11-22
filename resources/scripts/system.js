@@ -135,7 +135,7 @@ function newPScan(input, system) {
 
 function newCScan(input) {
 	let data = {
-		'raw': raw
+		'raw': input
 	}
 	let url = 'https://evescanner-gatekeeper.herokuapp.com/evepraisal';
 	httpRequest('POST', url, false, JSON.stringify(data), {'Content-Type': 'application/json'})
