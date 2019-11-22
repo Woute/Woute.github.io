@@ -158,7 +158,9 @@ function newCScan(input) {
 		d.open();
 		let result = JSON.parse(response);
 		let total = parseInt(result.appraisal.totals.sell, 10)
+		console.log(total);
 		total = total % 1000000;
+		console.log(total);
 		d.write(total.toFixed(2));
 		d.onkeyup = window.parent.keys;
 		d.close();
