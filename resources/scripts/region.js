@@ -13,7 +13,7 @@ function setDestination(sysId) {
 	if (event.ctrlKey) {
 		clearOtherWaypoints = true;
 	}
-    let address = baseURI + apiVersion + '/characters/ui/autopilot/waypoint/';
+    let address = baseURI + apiVersion + '/ui/autopilot/waypoint/';
 	address += '?add_to_beginning=' + addToBeginning;
 	address += '&clear_other_waypoints=' + clearOtherWaypoints;
 	address += '&destination_id=' + sysId;
