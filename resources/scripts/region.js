@@ -14,12 +14,11 @@ function setDestination(sysId) {
 		clearOtherWaypoints = true;
 	}
     let address = baseURI + apiVersion + '/characters/ui/autopilot/waypoint/';
-	let data = {
-		'clear_other_waypoints ': clearOtherWaypoints,
-		'add_to_beginning': addToBeginning,
-		'destination_id': sysId
-	}
-	httpRequest('POST', address, true, JSON.stringify(data))
+	address += '?add_to_beginning=' + addToBeginning;
+	address += '&clear_other_waypoints=' + clearOtherWaypoints;
+	address += '&destination_id=' + sysId;
+	address += '&token=' + localStorage.getItem('token');
+	httpRequest('POST', address, false)
 	.catch(err => {
 		console.log(err);
 	})
