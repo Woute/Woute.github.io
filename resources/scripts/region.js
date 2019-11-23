@@ -8,7 +8,7 @@ function setDestination(sysId) {
     let apiVersion = 'latest';
     let baseURI = 'https://esi.evetech.net/'
     if (event.shiftKey) {
-		first = true;
+		addToBeginning = true;
 	}
 	if (event.ctrlKey) {
 		clearOtherWaypoints = true;
